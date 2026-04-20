@@ -662,22 +662,24 @@ const DATA = {
  
   projets: [
     {
-      nom:'Infrastructure Active Directory & GLPI',
+      nom:'Mise en place d\'un serveur Centreon',
       type:'🎓 Scolaire',
-      techno:['Windows Server','Active Directory','GLPI'],
-      resume:'Projet central de 1re année : simulation complète d\'une infrastructure d\'entreprise avec AD et GLPI pour la gestion de parc et le support technique.',
+      techno:['Centreon','Linux','SNMP','SSH','Nagios','VMware'],
+      resume:'Déploiement complet d\'une solution de supervision réseau Centreon sur une VM Linux pour monitorer en temps réel l\'état des équipements et services du réseau.',
       statut:'✅ Terminé',
       desc:`
         <h4>🎯 Objectif du projet</h4>
-        <p>Création d'une infrastructure d'entreprise simulée pour acquérir les compétences fondamentales en administration système Windows et gestion de parc informatique.</p>
+        <p>Mettre en place une infrastructure de supervision réseau professionnelle avec Centreon afin de monitorer en temps réel l'état des équipements (serveurs, switches, routeurs) et d'être alerté en cas d'incident.</p>
         <h4>🏗️ Architecture mise en place</h4>
-        <p><strong>Windows Server 2019</strong> : contrôleur de domaine Active Directory, DNS, DHCP, GPO, partages réseau avec contrôle d'accès basé sur les groupes AD.</p>
-        <h4>🛠️ Intégration GLPI</h4>
-        <p>Déploiement sur Ubuntu, authentification LDAP, importation automatique des utilisateurs, inventaire des postes, système de ticketing avec workflows, notifications et escalade.</p>
-        <h4>🔧 Tests & documentation</h4>
-        <p>Validation des droits, SSO AD ↔ GLPI, guide d'installation, schéma d'architecture, procédures utilisateurs.</p>
+        <p><strong>Serveur Centreon sur VM Linux (CentOS) :</strong> installation et configuration complète de Centreon (Central + Poller), intégration du moteur de supervision Nagios, configuration de l'interface web d'administration.</p>
+        <h4>🔌 Ajout des équipements supervisés</h4>
+        <p>Déclaration des hôtes réseau (serveurs, switches, routeurs) dans Centreon, configuration des protocoles de collecte <strong>SNMP</strong> et <strong>SSH</strong>, application de templates de supervision prédéfinis et personnalisés selon les équipements.</p>
+        <h4>📊 Supervision & alertes</h4>
+        <p>Mise en place de services de contrôle : disponibilité (ping), charge CPU/RAM, espace disque, interfaces réseau. Configuration des seuils Warning/Critical et des notifications par email en cas d'incident ou de retour à la normale.</p>
+        <h4>🔧 Tests & validation</h4>
+        <p>Simulation de pannes pour valider le déclenchement des alertes, vérification des graphiques de performance (courbes RRD), ajustement des seuils selon les retours observés.</p>
         <h4>✅ Compétences acquises</h4>
-        <p>Windows Server, gestion d'identités, intégration LDAP/SSO, ITSM, inventaire automatisé, documentation technique.</p>
+        <p>Administration Linux, déploiement d'outils de supervision réseau, protocoles SNMP/SSH, configuration de templates Centreon/Nagios, gestion des alertes et dashboards de monitoring.</p>
       `,
     },
     {
