@@ -642,7 +642,6 @@ const DATA = {
     {id:'competences',icon:'⚙️',name:'Compétences'},
     {id:'projets',   icon:'🚀', name:'Projets'},
     {id:'parcours',  icon:'🎓', name:'Parcours'},
-    {id:'objectifs', icon:'🎯', name:'Objectifs'},
     {id:'tableau',   icon:'📋', name:'Tableau E5'},
     {id:'veille',    icon:'📡', name:'Veille'},
     {id:'contact',   icon:'📧', name:'Contact'},
@@ -805,7 +804,6 @@ const sections = {
         ['9','Compétences',   'competences'],
         ['3','Projets',       'projets'],
         ['3','Étapes clés',   'parcours'],
-        ['3','Objectifs',     'objectifs'],
       ].map(([n, lbl, id]) => `
         <div class="stat-card" onclick="show('${id}')" role="button" tabindex="0" aria-label="Voir ${lbl}">
           <span class="stat-number">${n}</span>${lbl}
@@ -848,16 +846,6 @@ const sections = {
         </div>`).join('')}
     </div>`,
  
-  objectifs: () => `
-    <h2>🎯 Objectifs Professionnels</h2>
-    ${DATA.objectifs.map(o => `
-      <div class="card priority-${o.priorite === 'Haute' ? 'high' : o.priorite === 'Moyenne' ? 'medium' : 'low'}" style="margin-bottom:16px">
-        <h3 style="margin-bottom:6px">${o.titre}</h3>
-        <p style="font-size:.82rem;font-family:var(--font-mono);color:var(--muted);margin-bottom:10px">
-          ${o.cat} &nbsp;|&nbsp; Priorité ${o.priorite} &nbsp;|&nbsp; Cible : ${fmtDate(o.date)}
-        </p>
-        <p>${o.desc}</p>
-      </div>`).join('')}`,
  
   tableau: () => {
     const thCells = TABLEAU.headers.map(h => `<th>${h}</th>`).join('');
@@ -985,3 +973,4 @@ show('accueil');
 </script>
 </body>
 </html>
+ 
