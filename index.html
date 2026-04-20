@@ -725,8 +725,9 @@ const DATA = {
  
   parcours: [
     {titre:'Baccalauréat Général', date:'2023-06', desc:'Spécialités Mathématiques et Sciences de l\'Ingénieur — Lycée Condorcet.'},
-    {titre:'Début BTS SIO SISR', date:'2024-09', desc:'BTS Services Informatiques aux Organisations, spécialisation SISR — Lycée Jacques Brel.'},
+    {titre:'BTS SIO', date:'2024-09', desc:'BTS Services Informatiques aux Organisations, spécialisation SISR — Lycée Jacques Brel.'},
     {titre:'Stage RATP Dev Lyon', date:'2025-06', desc:'7 semaines : réseau professionnel, switches Cisco, supervision Zabbix, scripts PowerShell AD.'},
+    {titre:'Stage RATP Dev Lyon', date:'2026-01', desc:'Stage de 2e année — approfondissement des missions infrastructure, systèmes et réseaux.'},
   ],
  
   objectifs: [
@@ -803,7 +804,7 @@ const sections = {
       ${[
         ['9','Compétences',   'competences'],
         ['3','Projets',       'projets'],
-        ['3','Étapes clés',   'parcours'],
+        ['4','Étapes clés',   'parcours'],
       ].map(([n, lbl, id]) => `
         <div class="stat-card" onclick="show('${id}')" role="button" tabindex="0" aria-label="Voir ${lbl}">
           <span class="stat-number">${n}</span>${lbl}
@@ -973,4 +974,3 @@ show('accueil');
 </script>
 </body>
 </html>
- 
