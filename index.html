@@ -10,7 +10,7 @@
 <style>
 /* ─── Reset & Tokens ─────────────────────────────────────────── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
+ 
 :root {
   --cyan:   #00ffff;
   --magenta:#ff00ff;
@@ -26,7 +26,7 @@
   --radius: 12px;
   --transition: 0.28s cubic-bezier(.4,0,.2,1);
 }
-
+ 
 body {
   font-family: var(--font-display);
   background: var(--bg);
@@ -35,7 +35,7 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
 }
-
+ 
 /* Ambient background gradients */
 body::before {
   content: '';
@@ -47,7 +47,7 @@ body::before {
   pointer-events: none;
   z-index: 0;
 }
-
+ 
 /* ─── Layout ──────────────────────────────────────────────────── */
 .container {
   max-width: 1100px;
@@ -56,14 +56,14 @@ body::before {
   position: relative;
   z-index: 1;
 }
-
+ 
 /* ─── Header ──────────────────────────────────────────────────── */
 .header {
   text-align: center;
   padding: 64px 0 48px;
   position: relative;
 }
-
+ 
 .header::after {
   content: '';
   position: absolute;
@@ -72,9 +72,9 @@ body::before {
   background: linear-gradient(90deg, transparent, var(--cyan), var(--magenta), transparent);
   animation: linePulse 3s ease-in-out infinite alternate;
 }
-
+ 
 @keyframes linePulse { from { opacity:.4; width:180px } to { opacity:1; width:320px } }
-
+ 
 .header h1 {
   font-size: clamp(2.2rem, 5vw, 3.6rem);
   font-weight: 800;
@@ -85,14 +85,14 @@ body::before {
   background-clip: text;
   margin-bottom: 10px;
 }
-
+ 
 .header p {
   font-family: var(--font-mono);
   font-size: .95rem;
   color: var(--muted);
   letter-spacing: .08em;
 }
-
+ 
 /* ─── Tabs ────────────────────────────────────────────────────── */
 .tabs {
   display: flex;
@@ -101,7 +101,7 @@ body::before {
   gap: 10px;
   margin-bottom: 28px;
 }
-
+ 
 .tab-btn {
   font-family: var(--font-display);
   font-size: .85rem;
@@ -117,7 +117,7 @@ body::before {
   position: relative;
   overflow: hidden;
 }
-
+ 
 .tab-btn::after {
   content: '';
   position: absolute; inset: 0;
@@ -125,7 +125,7 @@ body::before {
   opacity: 0;
   transition: opacity var(--transition);
 }
-
+ 
 .tab-btn:hover,
 .tab-btn.active {
   border-color: var(--cyan);
@@ -133,10 +133,10 @@ body::before {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(0,255,255,.15);
 }
-
+ 
 .tab-btn:hover::after,
 .tab-btn.active::after { opacity: 1; }
-
+ 
 /* ─── Content Panel ───────────────────────────────────────────── */
 .content {
   background: var(--surface);
@@ -147,7 +147,7 @@ body::before {
   position: relative;
   overflow: hidden;
 }
-
+ 
 .content::before {
   content: '';
   position: absolute;
@@ -155,19 +155,19 @@ body::before {
   background: linear-gradient(90deg, transparent, var(--cyan), var(--magenta), transparent);
   opacity: .5;
 }
-
+ 
 /* ─── Section Animation ───────────────────────────────────────── */
 .section { display: none; }
 .section.active {
   display: block;
   animation: fadeUp .4s ease forwards;
 }
-
+ 
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(16px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
+ 
 /* Section headings */
 .section h2 {
   font-size: 1.6rem;
@@ -175,7 +175,7 @@ body::before {
   margin-bottom: 24px;
   color: var(--text);
 }
-
+ 
 /* ─── Grid & Cards ────────────────────────────────────────────── */
 .grid {
   display: grid;
@@ -183,7 +183,7 @@ body::before {
   gap: 18px;
   margin-top: 20px;
 }
-
+ 
 .card {
   background: rgba(255,255,255,.05);
   border: 1px solid var(--border);
@@ -193,7 +193,7 @@ body::before {
   position: relative;
   overflow: hidden;
 }
-
+ 
 .card::before {
   content: '';
   position: absolute; inset: 0;
@@ -201,16 +201,16 @@ body::before {
   opacity: 0;
   transition: opacity var(--transition);
 }
-
+ 
 .card:hover {
   transform: translateY(-6px) scale(1.015);
   border-color: var(--cyan);
   box-shadow: 0 18px 36px rgba(0,255,255,.18);
 }
-
+ 
 .card:hover::before { opacity: 1; }
 .card > * { position: relative; z-index: 1; }
-
+ 
 /* ─── Badges ──────────────────────────────────────────────────── */
 .badge {
   display: inline-block;
@@ -222,12 +222,12 @@ body::before {
   font-family: var(--font-mono);
   margin: 2px;
 }
-
+ 
 /* Priority borders */
 .priority-high   { border-left: 3px solid #ff4444; }
 .priority-medium { border-left: 3px solid #ffaa00; }
 .priority-low    { border-left: 3px solid #44ff44; }
-
+ 
 /* ─── Skill Bar ───────────────────────────────────────────────── */
 .skill-bar {
   background: rgba(255,255,255,.1);
@@ -236,7 +236,7 @@ body::before {
   margin: 12px 0 6px;
   overflow: hidden;
 }
-
+ 
 .skill-progress {
   height: 100%;
   background: linear-gradient(90deg, var(--cyan), var(--blue));
@@ -244,32 +244,32 @@ body::before {
   position: relative;
   transition: width 1.4s ease;
 }
-
+ 
 .skill-progress::after {
   content: '';
   position: absolute; inset: 0;
   background: linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent);
   animation: shimmer 2.2s infinite;
 }
-
+ 
 @keyframes shimmer {
   0%   { transform: translateX(-100%); }
   100% { transform: translateX(100%); }
 }
-
+ 
 /* ─── Timeline ────────────────────────────────────────────────── */
 .timeline {
   position: relative;
   padding-left: 28px;
 }
-
+ 
 .timeline::before {
   content: '';
   position: absolute;
   left: 10px; top: 0; bottom: 0; width: 2px;
   background: linear-gradient(to bottom, var(--cyan), var(--magenta), var(--blue));
 }
-
+ 
 .timeline-item {
   background: rgba(255,255,255,.05);
   border: 1px solid rgba(0,128,255,.2);
@@ -279,7 +279,7 @@ body::before {
   position: relative;
   transition: all var(--transition);
 }
-
+ 
 .timeline-item::before {
   content: '';
   position: absolute;
@@ -289,13 +289,13 @@ body::before {
   border-radius: 50%;
   border: 2px solid var(--bg);
 }
-
+ 
 .timeline-item:hover {
   transform: scale(1.02);
   border-color: var(--blue);
   box-shadow: 0 12px 28px rgba(0,128,255,.2);
 }
-
+ 
 /* ─── Stats ───────────────────────────────────────────────────── */
 .stats {
   display: grid;
@@ -303,7 +303,7 @@ body::before {
   gap: 18px;
   margin-bottom: 28px;
 }
-
+ 
 .stat-card {
   background: rgba(255,255,255,.05);
   border: 1px solid var(--border);
@@ -313,13 +313,13 @@ body::before {
   cursor: pointer;
   transition: all var(--transition);
 }
-
+ 
 .stat-card:hover {
   transform: translateY(-7px);
   border-color: var(--cyan);
   box-shadow: 0 18px 36px rgba(0,255,255,.18);
 }
-
+ 
 .stat-number {
   font-size: 2.8rem;
   font-weight: 800;
@@ -330,7 +330,7 @@ body::before {
   display: block;
   margin-bottom: 8px;
 }
-
+ 
 /* ─── Welcome ─────────────────────────────────────────────────── */
 .welcome-card {
   text-align: center;
@@ -338,7 +338,7 @@ body::before {
   background: linear-gradient(135deg, rgba(0,255,255,.08), rgba(255,0,255,.08));
   border-radius: var(--radius);
 }
-
+ 
 .welcome-card h2 {
   font-size: clamp(2.5rem, 6vw, 4.2rem);
   font-weight: 800;
@@ -349,7 +349,7 @@ body::before {
   background-clip: text;
   margin-bottom: 14px;
 }
-
+ 
 .welcome-card .subtitle {
   font-family: var(--font-mono);
   font-size: 1rem;
@@ -357,7 +357,7 @@ body::before {
   margin-bottom: 28px;
   letter-spacing: .06em;
 }
-
+ 
 .welcome-card .quote {
   font-size: 1.05rem;
   font-style: italic;
@@ -366,13 +366,13 @@ body::before {
   margin: 0 auto;
   line-height: 1.8;
 }
-
+ 
 /* ─── Project Cards ───────────────────────────────────────────── */
 .project-card {
   cursor: pointer;
   position: relative;
 }
-
+ 
 .project-card::after {
   content: '🔍 Voir les détails';
   position: absolute;
@@ -387,14 +387,14 @@ body::before {
   border-radius: 12px;
   border: 1px solid var(--border);
 }
-
+ 
 .project-card:hover::after { opacity: 1; }
-
+ 
 .project-card:hover {
   border-color: var(--magenta);
   box-shadow: 0 18px 36px rgba(255,0,255,.22);
 }
-
+ 
 /* ─── Modal ───────────────────────────────────────────────────── */
 .modal-overlay {
   position: fixed; inset: 0;
@@ -406,11 +406,11 @@ body::before {
   z-index: 1000;
   padding: 20px;
 }
-
+ 
 .modal-overlay.show { display: flex; animation: fadeIn .25s ease; }
-
+ 
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
+ 
 .modal {
   background: rgba(8,12,24,.96);
   border: 1px solid rgba(0,255,255,.3);
@@ -424,12 +424,12 @@ body::before {
   box-shadow: 0 30px 60px rgba(0,255,255,.15);
   animation: scaleIn .28s cubic-bezier(.4,0,.2,1);
 }
-
+ 
 @keyframes scaleIn {
   from { opacity: 0; transform: scale(.88) translateY(-16px); }
   to   { opacity: 1; transform: scale(1) translateY(0); }
 }
-
+ 
 .modal-close {
   position: absolute;
   top: 16px; right: 16px;
@@ -443,12 +443,12 @@ body::before {
   border-radius: 50%;
   transition: all var(--transition);
 }
-
+ 
 .modal-close:hover {
   background: rgba(0,255,255,.1);
   transform: rotate(90deg);
 }
-
+ 
 .modal h2 {
   font-size: 1.7rem;
   font-weight: 700;
@@ -459,7 +459,7 @@ body::before {
   margin-bottom: 16px;
   padding-right: 40px;
 }
-
+ 
 .modal-status {
   display: inline-block;
   background: rgba(0,255,0,.15);
@@ -471,28 +471,28 @@ body::before {
   font-weight: 700;
   margin-bottom: 18px;
 }
-
+ 
 .modal-techno { margin: 16px 0 20px; }
-
+ 
 .modal-body h4 {
   color: var(--cyan);
   margin: 22px 0 12px;
   font-size: 1rem;
   font-weight: 700;
 }
-
+ 
 .modal-body h4:nth-of-type(2) { color: var(--magenta); }
 .modal-body h4:nth-of-type(3) { color: var(--blue); }
 .modal-body h4:nth-of-type(4) { color: #44ff88; }
 .modal-body h4:nth-of-type(5) { color: #00ff88; }
-
+ 
 .modal-body p {
   margin-bottom: 6px;
   color: var(--text);
   font-size: .95rem;
   line-height: 1.7;
 }
-
+ 
 /* ─── Tableau E5 ──────────────────────────────────────────────── */
 .tableau-legend {
   display: flex;
@@ -503,14 +503,14 @@ body::before {
   font-size: .78rem;
   color: var(--muted);
 }
-
+ 
 .legend-dot {
   display: inline-block;
   width: 8px; height: 8px;
   border-radius: 50%;
   margin-right: 5px;
 }
-
+ 
 .pdf-btn {
   display: inline-flex;
   align-items: center;
@@ -526,24 +526,24 @@ body::before {
   transition: all var(--transition);
   margin-bottom: 22px;
 }
-
+ 
 .pdf-btn:hover {
   background: rgba(0,255,255,.16);
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(0,255,255,.18);
 }
-
+ 
 .tableau-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); }
-
+ 
 .comp-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 12px;
   min-width: 720px;
 }
-
+ 
 .comp-table thead tr { background: rgba(0,255,255,.04); }
-
+ 
 .comp-table th {
   padding: 12px 8px;
   font-weight: 600;
@@ -555,20 +555,20 @@ body::before {
   line-height: 1.35;
   font-family: var(--font-mono);
 }
-
+ 
 .comp-table th.left { text-align: left; min-width: 210px; }
-
+ 
 .comp-table td {
   padding: 10px 8px;
   border-bottom: 1px solid rgba(255,255,255,.05);
   vertical-align: middle;
 }
-
+ 
 .comp-table tr:last-child td { border-bottom: none; }
 .comp-table tbody tr:hover td { background: rgba(0,255,255,.03); }
 .comp-table td.check { text-align: center; }
 .check-yes { color: var(--cyan); font-size: 15px; }
-
+ 
 .section-row td {
   background: rgba(255,255,255,.03);
   font-family: var(--font-mono);
@@ -579,14 +579,14 @@ body::before {
   letter-spacing: .1em;
   text-transform: uppercase;
 }
-
+ 
 .badge-pro    { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 4px; background: rgba(29,158,117,.18); color: #1D9E75; font-weight: 600; margin-bottom: 3px; font-family: var(--font-mono); }
 .badge-school { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 4px; background: rgba(55,138,221,.18); color: #378ADD; font-weight: 600; margin-bottom: 3px; font-family: var(--font-mono); }
 .badge-perso  { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 4px; background: rgba(127,119,221,.18); color: #9f99e8; font-weight: 600; margin-bottom: 3px; font-family: var(--font-mono); }
-
+ 
 .realisation-title { font-size: 12px; color: var(--text); font-weight: 600; }
 .realisation-desc  { font-size: 11px; color: var(--muted); margin-top: 2px; line-height: 1.45; font-family: var(--font-mono); }
-
+ 
 /* ─── Contact ─────────────────────────────────────────────────── */
 .contact-highlight {
   text-align: center;
@@ -596,12 +596,12 @@ body::before {
   margin-top: 18px;
   background: rgba(0,128,255,.06);
 }
-
+ 
 /* ─── Scrollbar ───────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: rgba(0,255,255,.3); border-radius: 3px; }
-
+ 
 /* ─── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .content { padding: 22px; }
@@ -613,7 +613,7 @@ body::before {
 </style>
 </head>
 <body>
-
+ 
 <div class="container">
   <header class="header">
     <h1>🖥️ Mohamed Korichi</h1>
@@ -622,7 +622,7 @@ body::before {
   <nav class="tabs" id="tabs" role="tablist"></nav>
   <main class="content" id="content" role="main"></main>
 </div>
-
+ 
 <!-- Modal -->
 <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-label="Détails du projet">
   <div class="modal" id="modal">
@@ -630,7 +630,7 @@ body::before {
     <div id="modal-content"></div>
   </div>
 </div>
-
+ 
 <script>
 /* ─────────────────────────────────────────────────────────────
    DATA
@@ -647,7 +647,7 @@ const DATA = {
     {id:'veille',    icon:'📡', name:'Veille'},
     {id:'contact',   icon:'📧', name:'Contact'},
   ],
-
+ 
   competences: [
     {nom:'Équipements réseau', niveau:65, cat:'🌐 Réseau', desc:'Configuration switches Cisco, VLAN, routage, pare-feu — expertise acquise lors du stage RATP Dev Lyon.'},
     {nom:'VMware vSphere', niveau:40, cat:'☁️ Virtualisation', desc:'Installation, configuration et gestion d\'infrastructures virtualisées, serveurs Windows/Linux.'},
@@ -659,7 +659,7 @@ const DATA = {
     {nom:'Easy Vista', niveau:70, cat:'🎫 Support', desc:'Gestion de tickets et support utilisateur, découvert et utilisé en stage.'},
     {nom:'Travail d\'équipe & Communication', niveau:85, cat:'👥 Soft Skills', desc:'Collaboration, communication en milieu professionnel, adaptation — compétences développées au stage RATP.'},
   ],
-
+ 
   projets: [
     {
       nom:'Infrastructure Active Directory & GLPI',
@@ -721,20 +721,20 @@ const DATA = {
       `,
     },
   ],
-
+ 
   parcours: [
     {titre:'Baccalauréat Général', date:'2023-06', desc:'Spécialités Mathématiques et Sciences de l\'Ingénieur — Lycée Condorcet.'},
     {titre:'Début BTS SIO SISR', date:'2024-09', desc:'BTS Services Informatiques aux Organisations, spécialisation SISR — Lycée Jacques Brel.'},
     {titre:'Stage RATP Dev Lyon', date:'2025-06', desc:'7 semaines : réseau professionnel, switches Cisco, supervision Zabbix, scripts PowerShell AD.'},
   ],
-
+ 
   objectifs: [
     {titre:'Certification CCNA Cisco', cat:'🏆 Certification', priorite:'Haute', date:'2025-12-01', desc:'Préparation intensive au CCNA pour valider les compétences réseau/infrastructure. Objectif prioritaire pour la spécialisation SISR.'},
     {titre:'Certification AWS Cloud Practitioner', cat:'☁️ Cloud', priorite:'Moyenne', date:'2026-03-01', desc:'Fondamentaux du cloud computing AWS, ouverture vers les infrastructures cloud.'},
     {titre:'Spécialisation Cybersécurité', cat:'🔒 Sécurité', priorite:'Moyenne', date:'2026-06-01', desc:'Pare-feu, sécurisation d\'infrastructures, audit de sécurité réseau.'},
   ],
 };
-
+ 
 /* ─────────────────────────────────────────────────────────────
    TABLEAU E5 DATA
 ───────────────────────────────────────────────────────────── */
@@ -776,7 +776,7 @@ const TABLEAU = {
     },
   ],
 };
-
+ 
 /* ─────────────────────────────────────────────────────────────
    HELPERS
 ───────────────────────────────────────────────────────────── */
@@ -784,7 +784,7 @@ const h = (tag, cls, inner) => `<${tag}${cls ? ` class="${cls}"` : ''}>${inner}<
 const badges = arr => arr.map(t => `<span class="badge">${t}</span>`).join('');
 const fmtDate = (iso, opts = {year:'numeric', month:'long'}) =>
   new Date(iso + (iso.length === 7 ? '-01' : '')).toLocaleDateString('fr-FR', opts);
-
+ 
 /* ─────────────────────────────────────────────────────────────
    SECTION RENDERERS
 ───────────────────────────────────────────────────────────── */
@@ -795,7 +795,7 @@ const sections = {
       <p class="subtitle">// Étudiant BTS SIO SISR</p>
       <p class="quote">« Passionné par l'infrastructure et les réseaux, je transforme les défis techniques en solutions innovantes. Chaque système que je configure, chaque réseau que j'optimise, contribue à construire l'avenir numérique. »</p>
     </div>`,
-
+ 
   dashboard: () => `
     <h2>📊 Vue d'ensemble</h2>
     <div class="stats">
@@ -812,7 +812,7 @@ const sections = {
     <p><strong>Progression :</strong> BTS SIO SISR en cours — spécialisation infrastructure, systèmes et réseaux.</p>
     <p style="margin-top:10px"><strong>Stage RATP Dev Lyon :</strong> 7 semaines — switches Cisco, VLAN, Zabbix, PowerShell, Easy Vista, diagnostic postes BAL.</p>
     <p style="margin-top:10px;color:var(--muted);font-family:var(--font-mono);font-size:.8rem">Dernière mise à jour : ${new Date().toLocaleDateString('fr-FR')}</p>`,
-
+ 
   competences: () => `
     <h2>⚙️ Compétences Techniques SISR</h2>
     <div class="grid">
@@ -824,7 +824,7 @@ const sections = {
           <small style="color:var(--muted);font-family:var(--font-mono)">Niveau : ${c.niveau}%</small>
         </div>`).join('')}
     </div>`,
-
+ 
   projets: () => `
     <h2>🚀 Projets Réalisés</h2>
     ${DATA.projets.map((p, i) => `
@@ -834,7 +834,7 @@ const sections = {
         <p style="margin-bottom:14px;font-size:.92rem">${p.resume}</p>
         ${badges(p.techno)}
       </div>`).join('')}`,
-
+ 
   parcours: () => `
     <h2>🎓 Parcours Académique</h2>
     <div class="timeline">
@@ -845,7 +845,7 @@ const sections = {
           <p>${p.desc}</p>
         </div>`).join('')}
     </div>`,
-
+ 
   objectifs: () => `
     <h2>🎯 Objectifs Professionnels</h2>
     ${DATA.objectifs.map(o => `
@@ -856,7 +856,7 @@ const sections = {
         </p>
         <p>${o.desc}</p>
       </div>`).join('')}`,
-
+ 
   tableau: () => {
     const thCells = TABLEAU.headers.map(h => `<th>${h}</th>`).join('');
     const rows = TABLEAU.sections.map(sec => {
@@ -871,7 +871,7 @@ const sections = {
         </tr>`).join('');
       return `<tr class="section-row"><td colspan="7">${sec.title}</td></tr>${itemRows}`;
     }).join('');
-
+ 
     return `
       <h2>📋 Tableau de Synthèse — Épreuve E5</h2>
       <div class="tableau-legend">
@@ -891,13 +891,13 @@ const sections = {
         </table>
       </div>`;
   },
-
+ 
   veille: () => `
     <h2>📡 Veille Technologique</h2>
     <div class="card" style="text-align:center;padding:56px 20px;color:var(--cyan);font-family:var(--font-mono)">
       // Contenu à venir...
     </div>`,
-
+ 
   contact: () => `
     <h2>📧 Contact</h2>
     <div class="grid">
@@ -906,9 +906,6 @@ const sections = {
         <p><strong>Nom :</strong> Mohamed Korichi</p>
         <p><strong>Formation :</strong> BTS SIO SISR</p>
         <p><strong>Établissement :</strong> Lycée Jacques Brel</p>
-        <p><strong>Statut :</strong> Étudiant 1re année</p>
-        <p><strong>Tuteur :</strong> Skimani Karim</p>
-        <p><strong>Professeur :</strong> Mme Betterki</p>
       </div>
       <div class="card">
         <h3 style="margin-bottom:14px">📧 Coordonnées professionnelles</h3>
@@ -918,25 +915,25 @@ const sections = {
         <p><strong>Portfolio :</strong> <a href="https://portfolio-mohamed-korichi.netlify.app/" target="_blank" rel="noopener" style="color:var(--cyan)">portfolio-mohamed-korichi.netlify.app</a></p>
       </div>
     </div>
-    <div class="contact-highlight">
-      <h3 style="margin-bottom:10px">💼 Recherche de Stage / Alternance</h3>
-      <p><strong>Disponibilité :</strong> À partir de janvier 2026</p>
-      <p><strong>Domaines :</strong> Administration systèmes & réseaux, Infrastructure IT, Support technique</p>
-      <p style="margin-top:10px;font-style:italic;color:var(--muted)">N'hésitez pas à me contacter pour toute opportunité !</p>
+    <div class="contact-highlight" style="margin-top:18px">
+      <h3 style="margin-bottom:16px">📄 Mon CV</h3>
+      <a href="https://drive.google.com/file/d/1-CoWaorqWE4Xx_2YBMvzIZ8NeJnAHo9q/view?usp=sharing" target="_blank" rel="noopener" class="pdf-btn" style="display:inline-flex;margin-bottom:0">
+        📄 Consulter mon CV
+      </a>
     </div>`,
 };
-
+ 
 /* ─────────────────────────────────────────────────────────────
    NAVIGATION
 ───────────────────────────────────────────────────────────── */
 let activeTab = 'accueil';
-
+ 
 function show(id) {
   activeTab = id;
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === id));
   document.getElementById('content').innerHTML = `<div class="section active">${sections[id]()}</div>`;
 }
-
+ 
 /* ─────────────────────────────────────────────────────────────
    MODAL
 ───────────────────────────────────────────────────────────── */
@@ -951,37 +948,37 @@ function openModal(idx) {
   document.getElementById('modal-overlay').classList.add('show');
   document.body.style.overflow = 'hidden';
 }
-
+ 
 function closeModal() {
   document.getElementById('modal-overlay').classList.remove('show');
   document.body.style.overflow = '';
 }
-
+ 
 /* ─────────────────────────────────────────────────────────────
    EVENTS
 ───────────────────────────────────────────────────────────── */
 document.getElementById('modal-overlay').addEventListener('click', e => {
   if (e.target === e.currentTarget) closeModal();
 });
-
+ 
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeModal();
 });
-
+ 
 // Keyboard support for tab buttons and project cards
 document.addEventListener('keydown', e => {
   if (e.key === 'Enter' && e.target.matches('.tab-btn')) e.target.click();
   if (e.key === 'Enter' && e.target.matches('.project-card')) e.target.click();
   if (e.key === 'Enter' && e.target.matches('.stat-card')) e.target.click();
 });
-
+ 
 /* ─────────────────────────────────────────────────────────────
    INIT
 ───────────────────────────────────────────────────────────── */
 document.getElementById('tabs').innerHTML = DATA.tabs.map(t =>
   `<button class="tab-btn${t.id === 'accueil' ? ' active' : ''}" data-tab="${t.id}" onclick="show('${t.id}')">${t.icon} ${t.name}</button>`
 ).join('');
-
+ 
 show('accueil');
 </script>
 </body>
