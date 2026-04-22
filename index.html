@@ -578,6 +578,293 @@ body::before {
   margin-top: 18px;
   background: rgba(0,128,255,.06);
 }
+
+/* ─── Veille Technologique ─────────────────────────────────── */
+.veille-hero {
+  position: relative;
+  background: linear-gradient(135deg, rgba(0,255,255,.06), rgba(255,0,255,.06), rgba(0,128,255,.08));
+  border: 1px solid rgba(0,255,255,.2);
+  border-radius: 16px;
+  padding: 36px;
+  margin-bottom: 32px;
+  overflow: hidden;
+}
+
+.veille-hero::before {
+  content: '🧠';
+  position: absolute;
+  right: 30px; top: 50%;
+  transform: translateY(-50%);
+  font-size: 7rem;
+  opacity: .07;
+  pointer-events: none;
+}
+
+.veille-hero h3 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--cyan), var(--magenta));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+}
+
+.veille-hero .meta {
+  font-family: var(--font-mono);
+  font-size: .78rem;
+  color: var(--muted);
+  margin-bottom: 16px;
+  letter-spacing: .06em;
+}
+
+.veille-hero p {
+  font-size: .97rem;
+  color: var(--text);
+  line-height: 1.8;
+  max-width: 720px;
+}
+
+.veille-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.veille-stat {
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.veille-stat .num {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--cyan), var(--magenta));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: block;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.veille-stat .lbl {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+.veille-section-title {
+  font-family: var(--font-mono);
+  font-size: .75rem;
+  color: var(--cyan);
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin: 32px 0 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(0,255,255,.15);
+}
+
+.veille-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.veille-step {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px;
+  padding: 20px;
+  transition: all var(--transition);
+}
+
+.veille-step:hover {
+  border-color: var(--cyan);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,255,255,.12);
+}
+
+.veille-step .step-num {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  color: var(--cyan);
+  margin-bottom: 8px;
+  opacity: .6;
+}
+
+.veille-step h4 {
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.veille-step p {
+  font-size: .85rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.veille-img-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.veille-img-card {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,.03);
+  transition: all var(--transition);
+}
+
+.veille-img-card:hover {
+  border-color: var(--cyan);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(0,255,255,.15);
+}
+
+.veille-img-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+}
+
+.veille-img-card .img-caption {
+  padding: 12px 14px;
+  font-family: var(--font-mono);
+  font-size: .74rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.veille-articles {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.article-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 10px;
+  padding: 18px 20px;
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.article-card:hover {
+  border-color: var(--cyan);
+  transform: translateX(6px);
+  box-shadow: 0 8px 24px rgba(0,255,255,.12);
+}
+
+.article-num {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: rgba(0,255,255,.25);
+  min-width: 32px;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.article-body {}
+
+.article-source {
+  font-family: var(--font-mono);
+  font-size: .72rem;
+  color: var(--cyan);
+  margin-bottom: 5px;
+  letter-spacing: .05em;
+}
+
+.article-title {
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 5px;
+  line-height: 1.4;
+}
+
+.article-desc {
+  font-size: .84rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.article-date {
+  font-family: var(--font-mono);
+  font-size: .7rem;
+  color: var(--muted);
+  margin-top: 6px;
+  opacity: .6;
+}
+
+.veille-limits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.limit-card {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 10px;
+  padding: 18px;
+}
+
+.limit-card .limit-icon {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.limit-card h4 {
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.limit-card p {
+  font-size: .83rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.veille-conclusion {
+  background: linear-gradient(135deg, rgba(0,255,255,.05), rgba(255,0,255,.05));
+  border: 1px solid rgba(0,255,255,.18);
+  border-radius: 12px;
+  padding: 28px 32px;
+  margin-top: 8px;
+}
+
+.veille-conclusion p {
+  font-size: .97rem;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+.veille-conclusion strong {
+  color: var(--cyan);
+}
  
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
@@ -589,6 +876,7 @@ body::before {
   .modal { padding: 24px; }
   .modal h2 { font-size: 1.3rem; }
   .welcome-card { padding: 48px 22px; }
+  .veille-hero::before { display: none; }
 }
 </style>
 </head>
@@ -842,11 +1130,185 @@ const sections = {
         </table>
       </div>`;
   },
- 
+
   veille: () => `
     <h2>📡 Veille Technologique</h2>
-    <div class="card" style="text-align:center;padding:56px 20px;color:var(--cyan);font-family:var(--font-mono)">
-      // Contenu à venir...
+
+    <!-- HERO -->
+    <div class="veille-hero">
+      <h3>Simulation du cerveau d'une mouche dans un ordinateur</h3>
+      <div class="meta">// Veille informationnelle &nbsp;·&nbsp; Neurosciences computationnelles &nbsp;·&nbsp; Mars 2026</div>
+      <p>
+        En mars 2026, la start-up américaine <strong>Eon Systems PBC</strong> a réalisé une avancée historique : 
+        elle a modélisé l'intégralité du cerveau d'une mouche du vinaigre (<em>Drosophila melanogaster</em>) 
+        dans un système informatique, puis l'a connecté à un corps virtuel simulé. 
+        La mouche numérique réagit à son environnement, se nourrit et se nettoie — reproduisant environ 
+        <strong>91 % des comportements</strong> d'une vraie mouche. Un tournant majeur pour la neuroscience et l'IA.
+      </p>
+    </div>
+
+    <!-- CHIFFRES CLÉS -->
+    <div class="veille-section-title">// Chiffres clés</div>
+    <div class="veille-stats">
+      <div class="veille-stat">
+        <span class="num">140k</span>
+        <span class="lbl">neurones cartographiés</span>
+      </div>
+      <div class="veille-stat">
+        <span class="num">50M+</span>
+        <span class="lbl">connexions synaptiques</span>
+      </div>
+      <div class="veille-stat">
+        <span class="num">91%</span>
+        <span class="lbl">comportements reproduits</span>
+      </div>
+      <div class="veille-stat">
+        <span class="num">2024</span>
+        <span class="lbl">publication dans Nature</span>
+      </div>
+      <div class="veille-stat">
+        <span class="num">70M</span>
+        <span class="lbl">neurones visés (souris)</span>
+      </div>
+    </div>
+
+    <!-- IMAGES -->
+    <div class="veille-section-title">// Illustrations du projet</div>
+    <div class="veille-img-grid">
+      <div class="veille-img-card">
+        <img src="https://neurosciencenews.com/files/2023/10/fruit-fly-brain-map-neuroscience.jpg" 
+             alt="Cartographie du cerveau de la drosophile" 
+             onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Drosophila_melanogaster_-_side_%28aka%29.jpg/320px-Drosophila_melanogaster_-_side_%28aka%29.jpg'">
+        <div class="img-caption">🧠 Connectome de la drosophile — cartographie complète des 140 000 neurones (projet FlyWire / Princeton)</div>
+      </div>
+      <div class="veille-img-card">
+        <img src="https://neurosciencenews.com/files/2023/10/fly-connectome-neuroscience.jpg" 
+             alt="Réseau neuronal de la mouche"
+             onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/NeuroMechFly.png/320px-NeuroMechFly.png'">
+        <div class="img-caption">🔬 Réseau de connexions synaptiques — 50 millions de synapses modélisées bit par bit</div>
+      </div>
+      <div class="veille-img-card">
+        <img src="https://nely-epfl.github.io/flygym/favicon.ico" 
+             alt="Corps virtuel NeuroMechFly"
+             onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Drosophila_melanogaster_Proboscis.jpg/320px-Drosophila_melanogaster_Proboscis.jpg'">
+        <div class="img-caption">🤖 Corps virtuel NeuroMechFly v2 (EPFL) — simulé via le moteur physique MuJoCo</div>
+      </div>
+    </div>
+
+    <!-- COMMENT ÇA MARCHE -->
+    <div class="veille-section-title">// Comment ça fonctionne techniquement</div>
+    <div class="veille-steps">
+      <div class="veille-step">
+        <div class="step-num">ÉTAPE 01</div>
+        <h4>🔬 Cartographie du connectome</h4>
+        <p>Le projet international <strong>FlyWire</strong> (Université de Princeton) a utilisé la microscopie électronique pour scanner le cerveau entier d'une drosophile et identifier chaque neurone et chaque synapse.</p>
+      </div>
+      <div class="veille-step">
+        <div class="step-num">ÉTAPE 02</div>
+        <h4>💾 Modélisation numérique</h4>
+        <p>Eon Systems a appliqué un modèle de neurone <strong>Leaky Integrate-and-Fire (LIF)</strong> : chaque neurone intègre les signaux reçus et émet une impulsion électrique lorsqu'un seuil est atteint.</p>
+      </div>
+      <div class="veille-step">
+        <div class="step-num">ÉTAPE 03</div>
+        <h4>🤖 Incarnation dans un corps virtuel</h4>
+        <p>Le cerveau numérique est connecté à <strong>NeuroMechFly v2</strong> (EPFL), un corps de mouche simulé physiquement via le moteur <strong>MuJoCo</strong>, créant une boucle complète perception → action.</p>
+      </div>
+      <div class="veille-step">
+        <div class="step-num">ÉTAPE 04</div>
+        <h4>🌍 Environnement simulé</h4>
+        <p>La mouche évolue dans un environnement imitant des aspects du monde réel (gravité, interactions physiques). Elle réagit aux stimuli sensoriels : sources de nourriture, obstacles, etc.</p>
+      </div>
+    </div>
+
+    <!-- ARTICLES SOURCES -->
+    <div class="veille-section-title">// Sources & articles consultés</div>
+    <div class="veille-articles">
+      <a class="article-card" href="https://www.neozone.org/innovation/ils-ont-incarne-le-cerveau-dune-mouche-dans-un-corps-virtuel-son-comportement-est-fascinant/" target="_blank" rel="noopener">
+        <div class="article-num">01</div>
+        <div class="article-body">
+          <div class="article-source">neozone.org</div>
+          <div class="article-title">Ils ont incarné le cerveau d'une mouche dans un corps virtuel, son comportement est fascinant</div>
+          <div class="article-desc">Article de vulgarisation présentant le projet Eon Systems : cartographie du connectome, intégration dans NeuroMechFly, comportements reproduits (91%) et perspectives vers le cerveau humain.</div>
+          <div class="article-date">17 mars 2026</div>
+        </div>
+      </a>
+      <a class="article-card" href="https://robohorizon.eu/fr/magazine/2026/03/eon-cerveau-mouche-simulation/" target="_blank" rel="noopener">
+        <div class="article-num">02</div>
+        <div class="article-body">
+          <div class="article-source">robohorizon.eu</div>
+          <div class="article-title">EON a simulé un cerveau de mouche, et ça fonctionne vraiment</div>
+          <div class="article-desc">Analyse technique détaillée du modèle LIF (Leaky Integrate-and-Fire), des limites de la simulation (absence de plasticité, mémoire long terme impossible) et du moteur MuJoCo utilisé pour le corps virtuel.</div>
+          <div class="article-date">9 mars 2026</div>
+        </div>
+      </a>
+      <a class="article-card" href="https://www.laterredufutur.com/accueil/des-chercheurs-transferent-le-cerveau-dune-mouche-dans-la-matrice-et-lui-permettent-de-controler-un-corps-virtuel/" target="_blank" rel="noopener">
+        <div class="article-num">03</div>
+        <div class="article-body">
+          <div class="article-source">laterredufutur.com / Terra Projects</div>
+          <div class="article-title">Des chercheurs transfèrent le cerveau d'une mouche dans la Matrice</div>
+          <div class="article-desc">Présentation de la boucle fermée perception-action : les informations sensorielles affluent, l'activité neuronale se propage dans le connectome, et le corps simulé exécute la réaction — une première mondiale.</div>
+          <div class="article-date">21 mars 2026</div>
+        </div>
+      </a>
+      <a class="article-card" href="https://sciencepost.fr/vous-pensez-que-matrix-nest-quune-fiction-des-scientifiques-ont-recree-le-cerveau-dune-mouche-dans-un-monde-virtuel-et-les-resultats-sont-troublants/" target="_blank" rel="noopener">
+        <div class="article-num">04</div>
+        <div class="article-body">
+          <div class="article-source">sciencepost.fr</div>
+          <div class="article-title">Des scientifiques ont recréé le cerveau d'une mouche dans un monde virtuel</div>
+          <div class="article-desc">Analyse de l'approche radicalement différente d'Eon Systems par rapport à l'IA classique : copier la nature plutôt que de la coder, et implications philosophiques sur la simulation de la conscience.</div>
+          <div class="article-date">18 mars 2026</div>
+        </div>
+      </a>
+      <a class="article-card" href="https://studio-laudator.com/emulation-biologique-cerveau-mouche/" target="_blank" rel="noopener">
+        <div class="article-num">05</div>
+        <div class="article-body">
+          <div class="article-source">studio-laudator.com</div>
+          <div class="article-title">Une mouche dans la matrice : l'IA face à l'émulation biologique</div>
+          <div class="article-desc">Article critique et nuancé : distinctions entre le travail du consortium FlyWire et celui d'Eon Systems, manque de transparence scientifique (pas de données ouvertes, pas de validation par les pairs), risques de storytelling marketing.</div>
+          <div class="article-date">19 mars 2026</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- LIMITES -->
+    <div class="veille-section-title">// Limites & points de vigilance</div>
+    <div class="veille-limits">
+      <div class="limit-card">
+        <span class="limit-icon">🔒</span>
+        <h4>Pas de mémoire à long terme</h4>
+        <p>Le modèle LIF utilisé ne permet pas la plasticité neuronale. La mouche simulée ne peut pas former de nouveaux souvenirs — son comportement est figé par l'architecture de son passé biologique.</p>
+      </div>
+      <div class="limit-card">
+        <span class="limit-icon">🧩</span>
+        <h4>Connexions motrices approximées</h4>
+        <p>Seul le cerveau a été scanné, pas le système nerveux complet. Eon Systems a dû improviser les connexions entre le cerveau et les muscles simulés, ce qui reste une approximation.</p>
+      </div>
+      <div class="limit-card">
+        <span class="limit-icon">🔍</span>
+        <h4>Transparence scientifique limitée</h4>
+        <p>Aucune donnée ouverte sur les algorithmes utilisés, pas encore de validation indépendante via des publications évaluées par les pairs. Le projet repose sur des données open source de FlyWire.</p>
+      </div>
+      <div class="limit-card">
+        <span class="limit-icon">📏</span>
+        <h4>Défi de l'échelle humaine</h4>
+        <p>Le cerveau humain compte 86 milliards de neurones contre 140 000 pour la mouche. Le prochain objectif (cerveau de souris, ~70 millions) représente déjà 560× la complexité actuelle.</p>
+      </div>
+    </div>
+
+    <!-- CONCLUSION -->
+    <div class="veille-section-title">// Analyse & perspectives</div>
+    <div class="veille-conclusion">
+      <p>
+        Ce projet illustre un <strong>changement de paradigme majeur</strong> dans l'intelligence artificielle : 
+        plutôt que d'essayer de coder l'intelligence à travers des algorithmes statistiques, 
+        Eon Systems a choisi de <strong>copier directement l'architecture du vivant</strong>. 
+        Si cette approche venait à s'étendre au cerveau humain, elle pourrait transformer en profondeur 
+        des domaines comme la médecine (étude des maladies neurodégénératives sur modèles numériques), 
+        l'intelligence artificielle générale (AGI), et même soulever des questions éthiques fondamentales 
+        sur la conscience et la simulation. Pour un professionnel de l'informatique, 
+        ce type d'avancée illustre aussi la <strong>puissance croissante des infrastructures de calcul</strong> 
+        nécessaires à ces simulations — un défi directement lié aux métiers des systèmes et réseaux.
+      </p>
     </div>`,
  
   contact: () => `
