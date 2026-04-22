@@ -783,8 +783,6 @@ body::before {
   margin-top: 2px;
 }
 
-.article-body {}
-
 .article-source {
   font-family: var(--font-mono);
   font-size: .72rem;
@@ -917,13 +915,34 @@ const DATA = {
     {nom:'Windows Server', niveau:50, cat:'🪟 Système', desc:'Administration Windows Server 2019/2022, Active Directory, services réseau — niveau intermédiaire.'},
     {nom:'Linux Administration', niveau:35, cat:'🐧 Système', desc:'Ubuntu Server, CentOS, Debian — distributions variées, niveau débutant.'},
     {nom:'Cisco Packet Tracer', niveau:75, cat:'🌐 Simulation', desc:'Maîtrise avancée : conception et tests de topologies réseau complexes.'},
-    {nom:'GLPI', niveau:70, cat:'🛠️ Gestion de parc', desc:'Gestion de parc informatique et ticketing avec intégration Active Directory.'},
-    {nom:'Active Directory', niveau:35, cat:'🗂️ Annuaire', desc:'Configuration et gestion des services d\'annuaire — projet central de 1re année.'},
+    {nom:'GLPI', niveau:70, cat:'🛠️ Gestion de parc', desc:'Déploiement et configuration de GLPI (stack LAMP, FusionInventory, ticketing, LDAP) — projet GSB en 1ère année.'},
+    {nom:'Active Directory', niveau:35, cat:'🗂️ Annuaire', desc:'Configuration et gestion des services d\'annuaire — projet central de 1re année (GSB).'},
     {nom:'Easy Vista', niveau:70, cat:'🎫 Support', desc:'Gestion de tickets et support utilisateur, découvert et utilisé en stage.'},
     {nom:'Travail d\'équipe & Communication', niveau:85, cat:'👥 Soft Skills', desc:'Collaboration, communication en milieu professionnel, adaptation — compétences développées au stage RATP.'},
   ],
  
   projets: [
+    {
+      nom:'Déploiement & configuration de GLPI — GSB',
+      type:'🎓 Scolaire',
+      techno:['GLPI','FusionInventory','Linux','Debian','Apache','MySQL','PHP','LDAP'],
+      resume:'Déploiement d\'une solution GLPI complète sur serveur Linux dans le cadre du TP GSB : installation de la stack LAMP, configuration de l\'inventaire automatique avec FusionInventory et mise en place du système de ticketing.',
+      statut:'✅ Terminé',
+      desc:`
+        <h4>📋 Contexte</h4>
+        <p>Dans le cadre du TP GSB en 1ère année de BTS SIO SISR, l'objectif était de déployer et configurer une solution de gestion de parc informatique et de ticketing avec <strong>GLPI</strong>, sur un serveur Linux Debian en environnement virtualisé.</p>
+        <h4>🖥️ Installation de l'environnement serveur</h4>
+        <p>Mise en place de la stack <strong>LAMP</strong> sur Debian : installation et configuration d'Apache (serveur web), MySQL (base de données), et PHP. Création de la base de données GLPI, configuration des droits utilisateur MySQL, et déploiement de l'application GLPI (version 10) via l'interface web d'installation.</p>
+        <h4>📦 Inventaire automatique avec FusionInventory</h4>
+        <p>Installation du plugin <strong>FusionInventory</strong> côté serveur GLPI. Déploiement de l'agent FusionInventory sur les postes clients Windows pour permettre la remontée automatique des informations matérielles et logicielles (processeur, RAM, disques, logiciels installés, adresses réseau). Configuration des tâches d'inventaire planifiées et vérification de la remontée des équipements dans GLPI.</p>
+        <h4>🎫 Système de ticketing</h4>
+        <p>Configuration du module helpdesk de GLPI : création des catégories de tickets, définition des niveaux de priorité, paramétrage des règles de routage des demandes vers les bons techniciens. Simulation d'ouverture, prise en charge et clôture de tickets d'incidents pour valider le flux complet.</p>
+        <h4>🔐 Authentification LDAP</h4>
+        <p>Configuration de l'annuaire <strong>LDAP</strong> dans GLPI pour permettre aux utilisateurs de se connecter avec leurs identifiants du domaine. Paramétrage des filtres de recherche, synchronisation des utilisateurs et attribution automatique des profils GLPI selon les groupes.</p>
+        <h4>✅ Compétences acquises</h4>
+        <p>Administration Linux Debian, déploiement d'une stack LAMP, installation et configuration de GLPI, gestion de parc informatique avec FusionInventory, système de ticketing helpdesk, intégration LDAP, documentation technique.</p>
+      `,
+    },
     {
       nom:'Mise en place d\'un serveur Centreon',
       type:'🎓 Scolaire',
@@ -1015,7 +1034,8 @@ const TABLEAU = {
     {
       title: 'RÉALISATIONS SCOLAIRES',
       items: [
-        {badge:'school', label:'Scolaire', titre:'Infrastructure Active Directory & GLPI',       desc:'Windows Server 2019 · AD, DNS, DHCP, GPO · GLPI LDAP, inventaire, ticketing',     comps:[1,1,0,1,1,0]},
+        {badge:'school', label:'Scolaire', titre:'Déploiement GLPI — GSB',                       desc:'Debian · Stack LAMP · FusionInventory · Ticketing · Authentification LDAP',       comps:[1,1,0,1,1,0]},
+        {badge:'school', label:'Scolaire', titre:'Mise en place d\'un serveur Centreon',         desc:'VM Linux (CentOS) · Centreon · SNMP/SSH · Supervision CPU/RAM/disque',            comps:[1,1,0,1,1,0]},
       ],
     },
     {
@@ -1044,7 +1064,7 @@ const sections = {
     <div class="welcome-card">
       <h2>Mohamed Korichi</h2>
       <p class="subtitle">// Étudiant BTS SIO SISR</p>
-      <p class="quote">« Passionné par l'infrastructure et les réseaux, je transforme les défis techniques en solutions innovantes. Chaque système que je configure, chaque réseau que j'optimise, contribue à construire l'avenir numérique. »</p>
+      <p class="quote">« Étudiant BTS SIO SISR passionné par les réseaux et l'infrastructure, je cherche à mettre en pratique mes compétences à travers des projets concrets et des expériences en entreprise. »</p>
     </div>`,
  
   dashboard: () => `
@@ -1052,7 +1072,7 @@ const sections = {
     <div class="stats">
       ${[
         ['9','Compétences',   'competences'],
-        ['3','Projets',       'projets'],
+        ['4','Projets',       'projets'],
         ['4','Étapes clés',   'parcours'],
       ].map(([n, lbl, id]) => `
         <div class="stat-card" onclick="show('${id}')" role="button" tabindex="0" aria-label="Voir ${lbl}">
@@ -1134,7 +1154,6 @@ const sections = {
   veille: () => `
     <h2>📡 Veille Technologique</h2>
 
-    <!-- HERO -->
     <div class="veille-hero">
       <h3>Simulation du cerveau d'une mouche dans un ordinateur</h3>
       <div class="meta">// Veille informationnelle &nbsp;·&nbsp; Neurosciences computationnelles &nbsp;·&nbsp; Mars 2026</div>
@@ -1147,217 +1166,15 @@ const sections = {
       </p>
     </div>
 
-    <!-- CHIFFRES CLÉS -->
     <div class="veille-section-title">// Chiffres clés</div>
     <div class="veille-stats">
-      <div class="veille-stat">
-        <span class="num">140k</span>
-        <span class="lbl">neurones cartographiés</span>
-      </div>
-      <div class="veille-stat">
-        <span class="num">50M+</span>
-        <span class="lbl">connexions synaptiques</span>
-      </div>
-      <div class="veille-stat">
-        <span class="num">91%</span>
-        <span class="lbl">comportements reproduits</span>
-      </div>
-      <div class="veille-stat">
-        <span class="num">2024</span>
-        <span class="lbl">publication dans Nature</span>
-      </div>
-      <div class="veille-stat">
-        <span class="num">70M</span>
-        <span class="lbl">neurones visés (souris)</span>
-      </div>
+      <div class="veille-stat"><span class="num">140k</span><span class="lbl">neurones cartographiés</span></div>
+      <div class="veille-stat"><span class="num">50M+</span><span class="lbl">connexions synaptiques</span></div>
+      <div class="veille-stat"><span class="num">91%</span><span class="lbl">comportements reproduits</span></div>
+      <div class="veille-stat"><span class="num">2024</span><span class="lbl">publication dans Nature</span></div>
+      <div class="veille-stat"><span class="num">70M</span><span class="lbl">neurones visés (souris)</span></div>
     </div>
 
-    <!-- IMAGES -->
-    <div class="veille-section-title">// Illustrations du projet</div>
-    <div class="veille-img-grid">
-
-      <!-- IMAGE 1 : Connectome / réseau neuronal -->
-      <div class="veille-img-card">
-        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:170px;display:block;background:#08101e;">
-          <defs>
-            <radialGradient id="ng1" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#00ffff" stop-opacity="0.18"/>
-              <stop offset="100%" stop-color="#0d1120" stop-opacity="0"/>
-            </radialGradient>
-            <filter id="glow1"><feGaussianBlur stdDeviation="2.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-          </defs>
-          <rect width="400" height="200" fill="#08101e"/>
-          <ellipse cx="200" cy="100" rx="140" ry="80" fill="url(#ng1)"/>
-          <!-- Neurones -->
-          <g filter="url(#glow1)">
-            <!-- Nœuds principaux -->
-            <circle cx="200" cy="100" r="6" fill="#00ffff" opacity="0.9"/>
-            <circle cx="130" cy="70"  r="4" fill="#00ffff" opacity="0.8"/>
-            <circle cx="270" cy="70"  r="4" fill="#ff00ff" opacity="0.8"/>
-            <circle cx="150" cy="130" r="4" fill="#0080ff" opacity="0.8"/>
-            <circle cx="250" cy="130" r="4" fill="#00ffff" opacity="0.8"/>
-            <circle cx="100" cy="100" r="3" fill="#ff00ff" opacity="0.7"/>
-            <circle cx="300" cy="100" r="3" fill="#0080ff" opacity="0.7"/>
-            <circle cx="170" cy="60"  r="3" fill="#00ffff" opacity="0.7"/>
-            <circle cx="230" cy="60"  r="3" fill="#ff00ff" opacity="0.7"/>
-            <circle cx="120" cy="140" r="3" fill="#0080ff" opacity="0.7"/>
-            <circle cx="280" cy="140" r="3" fill="#00ffff" opacity="0.7"/>
-            <circle cx="200" cy="55"  r="3" fill="#ff00ff" opacity="0.7"/>
-            <circle cx="200" cy="145" r="3" fill="#0080ff" opacity="0.7"/>
-            <!-- Petits nœuds -->
-            <circle cx="155" cy="90"  r="2" fill="#00ffff" opacity="0.6"/>
-            <circle cx="245" cy="90"  r="2" fill="#ff00ff" opacity="0.6"/>
-            <circle cx="175" cy="115" r="2" fill="#0080ff" opacity="0.6"/>
-            <circle cx="225" cy="115" r="2" fill="#00ffff" opacity="0.6"/>
-            <circle cx="85"  cy="80"  r="2" fill="#ff00ff" opacity="0.5"/>
-            <circle cx="315" cy="80"  r="2" fill="#0080ff" opacity="0.5"/>
-            <circle cx="85"  cy="120" r="2" fill="#00ffff" opacity="0.5"/>
-            <circle cx="315" cy="120" r="2" fill="#ff00ff" opacity="0.5"/>
-          </g>
-          <!-- Connexions synaptiques -->
-          <g stroke-width="0.8" opacity="0.45">
-            <line x1="200" y1="100" x2="130" y2="70"  stroke="#00ffff"/>
-            <line x1="200" y1="100" x2="270" y2="70"  stroke="#ff00ff"/>
-            <line x1="200" y1="100" x2="150" y2="130" stroke="#0080ff"/>
-            <line x1="200" y1="100" x2="250" y2="130" stroke="#00ffff"/>
-            <line x1="200" y1="100" x2="100" y2="100" stroke="#ff00ff"/>
-            <line x1="200" y1="100" x2="300" y2="100" stroke="#0080ff"/>
-            <line x1="200" y1="100" x2="200" y2="55"  stroke="#00ffff"/>
-            <line x1="200" y1="100" x2="200" y2="145" stroke="#ff00ff"/>
-            <line x1="130" y1="70"  x2="170" y2="60"  stroke="#00ffff"/>
-            <line x1="130" y1="70"  x2="100" y2="100" stroke="#ff00ff"/>
-            <line x1="270" y1="70"  x2="230" y2="60"  stroke="#ff00ff"/>
-            <line x1="270" y1="70"  x2="300" y2="100" stroke="#0080ff"/>
-            <line x1="150" y1="130" x2="120" y2="140" stroke="#0080ff"/>
-            <line x1="250" y1="130" x2="280" y2="140" stroke="#00ffff"/>
-            <line x1="130" y1="70"  x2="155" y2="90"  stroke="#00ffff"/>
-            <line x1="270" y1="70"  x2="245" y2="90"  stroke="#ff00ff"/>
-            <line x1="150" y1="130" x2="175" y2="115" stroke="#0080ff"/>
-            <line x1="250" y1="130" x2="225" y2="115" stroke="#00ffff"/>
-            <line x1="100" y1="100" x2="85"  y2="80"  stroke="#ff00ff"/>
-            <line x1="100" y1="100" x2="85"  y2="120" stroke="#00ffff"/>
-            <line x1="300" y1="100" x2="315" y2="80"  stroke="#0080ff"/>
-            <line x1="300" y1="100" x2="315" y2="120" stroke="#ff00ff"/>
-            <line x1="170" y1="60"  x2="200" y2="55"  stroke="#00ffff"/>
-            <line x1="230" y1="60"  x2="200" y2="55"  stroke="#ff00ff"/>
-            <line x1="120" y1="140" x2="200" y2="145" stroke="#0080ff"/>
-            <line x1="280" y1="140" x2="200" y2="145" stroke="#00ffff"/>
-          </g>
-          <!-- Label -->
-          <text x="200" y="190" text-anchor="middle" fill="rgba(0,255,255,0.5)" font-size="10" font-family="monospace">Connectome — 140 000 neurones · FlyWire / Princeton</text>
-        </svg>
-        <div class="img-caption">🧠 Connectome de la drosophile — cartographie complète des 140 000 neurones (projet FlyWire / Princeton 2024)</div>
-      </div>
-
-      <!-- IMAGE 2 : Synapses / signaux électriques -->
-      <div class="veille-img-card">
-        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:170px;display:block;background:#08101e;">
-          <defs>
-            <linearGradient id="sg1" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#00ffff" stop-opacity="0"/>
-              <stop offset="50%" stop-color="#00ffff" stop-opacity="0.8"/>
-              <stop offset="100%" stop-color="#00ffff" stop-opacity="0"/>
-            </linearGradient>
-            <linearGradient id="sg2" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#ff00ff" stop-opacity="0"/>
-              <stop offset="50%" stop-color="#ff00ff" stop-opacity="0.8"/>
-              <stop offset="100%" stop-color="#ff00ff" stop-opacity="0"/>
-            </linearGradient>
-            <filter id="glow2"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-          </defs>
-          <rect width="400" height="200" fill="#08101e"/>
-          <!-- Axones -->
-          <g filter="url(#glow2)" opacity="0.7">
-            <!-- Neurone 1 -->
-            <circle cx="60" cy="50" r="10" fill="none" stroke="#00ffff" stroke-width="1.5"/>
-            <circle cx="60" cy="50" r="5"  fill="#00ffff" opacity="0.6"/>
-            <line x1="70" y1="50" x2="340" y2="50" stroke="url(#sg1)" stroke-width="2"/>
-            <!-- Potentiel d'action -->
-            <polyline points="120,50 135,50 140,20 150,80 160,50 340,50" fill="none" stroke="#00ffff" stroke-width="1.5" opacity="0.9"/>
-            <!-- Neurone 2 -->
-            <circle cx="60" cy="100" r="10" fill="none" stroke="#ff00ff" stroke-width="1.5"/>
-            <circle cx="60" cy="100" r="5"  fill="#ff00ff" opacity="0.6"/>
-            <line x1="70" y1="100" x2="340" y2="100" stroke="url(#sg2)" stroke-width="2"/>
-            <polyline points="180,100 195,100 200,70 210,130 220,100 340,100" fill="none" stroke="#ff00ff" stroke-width="1.5" opacity="0.9"/>
-            <!-- Neurone 3 -->
-            <circle cx="60" cy="150" r="10" fill="none" stroke="#0080ff" stroke-width="1.5"/>
-            <circle cx="60" cy="150" r="5"  fill="#0080ff" opacity="0.6"/>
-            <line x1="70" y1="150" x2="340" y2="150" stroke="#0080ff" stroke-width="1.5" opacity="0.4"/>
-            <polyline points="240,150 255,150 260,120 270,180 280,150 340,150" fill="none" stroke="#0080ff" stroke-width="1.5" opacity="0.9"/>
-            <!-- Synapse entre neurone 1 et 2 -->
-            <circle cx="340" cy="50"  r="6" fill="#00ffff" opacity="0.5"/>
-            <circle cx="340" cy="100" r="6" fill="#ff00ff" opacity="0.5"/>
-            <circle cx="340" cy="150" r="6" fill="#0080ff" opacity="0.5"/>
-            <line x1="340" y1="50" x2="370" y2="100" stroke="rgba(0,255,255,0.4)" stroke-width="1"/>
-            <line x1="340" y1="100" x2="370" y2="150" stroke="rgba(255,0,255,0.4)" stroke-width="1"/>
-          </g>
-          <!-- Labels axes -->
-          <text x="35" y="54"  text-anchor="middle" fill="rgba(0,255,255,0.6)" font-size="8" font-family="monospace">N1</text>
-          <text x="35" y="104" text-anchor="middle" fill="rgba(255,0,255,0.6)" font-size="8" font-family="monospace">N2</text>
-          <text x="35" y="154" text-anchor="middle" fill="rgba(0,128,255,0.6)" font-size="8" font-family="monospace">N3</text>
-          <text x="200" y="192" text-anchor="middle" fill="rgba(0,255,255,0.5)" font-size="10" font-family="monospace">Signaux électriques — modèle LIF (Leaky Integrate-and-Fire)</text>
-        </svg>
-        <div class="img-caption">⚡ Propagation des signaux électriques dans le réseau — modèle Leaky Integrate-and-Fire appliqué aux 50M synapses</div>
-      </div>
-
-      <!-- IMAGE 3 : Corps virtuel NeuroMechFly -->
-      <div class="veille-img-card">
-        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:170px;display:block;background:#08101e;">
-          <defs>
-            <radialGradient id="bg3" cx="50%" cy="45%" r="55%">
-              <stop offset="0%" stop-color="#001a20"/>
-              <stop offset="100%" stop-color="#08101e"/>
-            </radialGradient>
-            <filter id="glow3"><feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-          </defs>
-          <rect width="400" height="200" fill="url(#bg3)"/>
-          <!-- Sol -->
-          <line x1="60" y1="158" x2="340" y2="158" stroke="rgba(0,255,255,0.15)" stroke-width="1"/>
-          <!-- Corps mouche stylisé (vue de côté) -->
-          <g filter="url(#glow3)" transform="translate(200,95)">
-            <!-- Abdomen -->
-            <ellipse cx="30" cy="10" rx="35" ry="18" fill="none" stroke="#00ffff" stroke-width="1.5" opacity="0.8"/>
-            <!-- Thorax -->
-            <ellipse cx="-10" cy="5" rx="22" ry="16" fill="none" stroke="#00ffff" stroke-width="1.5" opacity="0.8"/>
-            <!-- Tête -->
-            <circle cx="-38" cy="2" r="13" fill="none" stroke="#ff00ff" stroke-width="1.5" opacity="0.8"/>
-            <!-- Yeux -->
-            <circle cx="-42" cy="-2" r="4" fill="rgba(255,0,255,0.3)" stroke="#ff00ff" stroke-width="1"/>
-            <!-- Antennes -->
-            <line x1="-45" y1="-10" x2="-55" y2="-25" stroke="#ff00ff" stroke-width="1" opacity="0.8"/>
-            <line x1="-41" y1="-12" x2="-48" y2="-28" stroke="#ff00ff" stroke-width="1" opacity="0.8"/>
-            <circle cx="-55" cy="-25" r="2" fill="#ff00ff" opacity="0.6"/>
-            <circle cx="-48" cy="-28" r="2" fill="#ff00ff" opacity="0.6"/>
-            <!-- Ailes -->
-            <ellipse cx="-5" cy="-20" rx="38" ry="14" fill="rgba(0,255,255,0.06)" stroke="#00ffff" stroke-width="1" opacity="0.6" transform="rotate(-15,-5,-20)"/>
-            <ellipse cx="5" cy="-22" rx="30" ry="10" fill="rgba(0,128,255,0.06)" stroke="#0080ff" stroke-width="1" opacity="0.5" transform="rotate(-10,5,-22)"/>
-            <!-- Pattes (6) -->
-            <!-- Patte avant gauche -->
-            <polyline points="-20,18 -30,35 -25,52" fill="none" stroke="#0080ff" stroke-width="1.5" opacity="0.8"/>
-            <!-- Patte milieu gauche -->
-            <polyline points="-5,18 -8,38 -2,55" fill="none" stroke="#0080ff" stroke-width="1.5" opacity="0.8"/>
-            <!-- Patte arrière gauche -->
-            <polyline points="15,18 18,37 25,53" fill="none" stroke="#0080ff" stroke-width="1.5" opacity="0.8"/>
-            <!-- Points articulations -->
-            <circle cx="-30" cy="35" r="2" fill="#0080ff" opacity="0.7"/>
-            <circle cx="-8"  cy="38" r="2" fill="#0080ff" opacity="0.7"/>
-            <circle cx="18"  cy="37" r="2" fill="#0080ff" opacity="0.7"/>
-            <!-- Cerveau (dans la tête) -->
-            <ellipse cx="-36" cy="2" rx="7" ry="6" fill="rgba(0,255,255,0.15)" stroke="#00ffff" stroke-width="0.8" stroke-dasharray="2,1"/>
-            <!-- Signal cerveau → corps -->
-            <line x1="-29" y1="2" x2="-18" y2="4" stroke="rgba(0,255,255,0.5)" stroke-width="1" stroke-dasharray="3,2"/>
-          </g>
-          <!-- Labels -->
-          <text x="130" y="185" text-anchor="middle" fill="rgba(255,0,255,0.6)" font-size="9" font-family="monospace">Cerveau simulé</text>
-          <text x="265" y="185" text-anchor="middle" fill="rgba(0,128,255,0.6)" font-size="9" font-family="monospace">Corps virtuel MuJoCo</text>
-          <text x="200" y="15" text-anchor="middle" fill="rgba(0,255,255,0.5)" font-size="10" font-family="monospace">NeuroMechFly v2 — EPFL · 91% comportements reproduits</text>
-        </svg>
-        <div class="img-caption">🤖 Corps virtuel NeuroMechFly v2 (EPFL) — cerveau numérique couplé à un corps simulé via le moteur physique MuJoCo</div>
-      </div>
-
-    </div>
-
-    <!-- COMMENT ÇA MARCHE -->
     <div class="veille-section-title">// Comment ça fonctionne techniquement</div>
     <div class="veille-steps">
       <div class="veille-step">
@@ -1382,7 +1199,6 @@ const sections = {
       </div>
     </div>
 
-    <!-- ARTICLES SOURCES -->
     <div class="veille-section-title">// Sources & articles consultés</div>
     <div class="veille-articles">
       <a class="article-card" href="https://www.neozone.org/innovation/ils-ont-incarne-le-cerveau-dune-mouche-dans-un-corps-virtuel-son-comportement-est-fascinant/" target="_blank" rel="noopener">
@@ -1399,7 +1215,7 @@ const sections = {
         <div class="article-body">
           <div class="article-source">robohorizon.eu</div>
           <div class="article-title">EON a simulé un cerveau de mouche, et ça fonctionne vraiment</div>
-          <div class="article-desc">Analyse technique détaillée du modèle LIF (Leaky Integrate-and-Fire), des limites de la simulation (absence de plasticité, mémoire long terme impossible) et du moteur MuJoCo utilisé pour le corps virtuel.</div>
+          <div class="article-desc">Analyse technique détaillée du modèle LIF (Leaky Integrate-and-Fire), des limites de la simulation et du moteur MuJoCo utilisé pour le corps virtuel.</div>
           <div class="article-date">9 mars 2026</div>
         </div>
       </a>
@@ -1408,7 +1224,7 @@ const sections = {
         <div class="article-body">
           <div class="article-source">laterredufutur.com / Terra Projects</div>
           <div class="article-title">Des chercheurs transfèrent le cerveau d'une mouche dans la Matrice</div>
-          <div class="article-desc">Présentation de la boucle fermée perception-action : les informations sensorielles affluent, l'activité neuronale se propage dans le connectome, et le corps simulé exécute la réaction — une première mondiale.</div>
+          <div class="article-desc">Présentation de la boucle fermée perception-action : informations sensorielles, activité neuronale dans le connectome, et exécution par le corps simulé — une première mondiale.</div>
           <div class="article-date">21 mars 2026</div>
         </div>
       </a>
@@ -1426,48 +1242,43 @@ const sections = {
         <div class="article-body">
           <div class="article-source">studio-laudator.com</div>
           <div class="article-title">Une mouche dans la matrice : l'IA face à l'émulation biologique</div>
-          <div class="article-desc">Article critique et nuancé : distinctions entre le travail du consortium FlyWire et celui d'Eon Systems, manque de transparence scientifique (pas de données ouvertes, pas de validation par les pairs), risques de storytelling marketing.</div>
+          <div class="article-desc">Article critique et nuancé : distinctions entre le travail du consortium FlyWire et celui d'Eon Systems, manque de transparence scientifique, risques de storytelling marketing.</div>
           <div class="article-date">19 mars 2026</div>
         </div>
       </a>
     </div>
 
-    <!-- LIMITES -->
     <div class="veille-section-title">// Limites & points de vigilance</div>
     <div class="veille-limits">
       <div class="limit-card">
         <span class="limit-icon">🔒</span>
         <h4>Pas de mémoire à long terme</h4>
-        <p>Le modèle LIF utilisé ne permet pas la plasticité neuronale. La mouche simulée ne peut pas former de nouveaux souvenirs — son comportement est figé par l'architecture de son passé biologique.</p>
+        <p>Le modèle LIF utilisé ne permet pas la plasticité neuronale. La mouche simulée ne peut pas former de nouveaux souvenirs.</p>
       </div>
       <div class="limit-card">
         <span class="limit-icon">🧩</span>
         <h4>Connexions motrices approximées</h4>
-        <p>Seul le cerveau a été scanné, pas le système nerveux complet. Eon Systems a dû improviser les connexions entre le cerveau et les muscles simulés, ce qui reste une approximation.</p>
+        <p>Seul le cerveau a été scanné, pas le système nerveux complet. Les connexions cerveau-muscles ont dû être approximées.</p>
       </div>
       <div class="limit-card">
         <span class="limit-icon">🔍</span>
         <h4>Transparence scientifique limitée</h4>
-        <p>Aucune donnée ouverte sur les algorithmes utilisés, pas encore de validation indépendante via des publications évaluées par les pairs. Le projet repose sur des données open source de FlyWire.</p>
+        <p>Aucune donnée ouverte sur les algorithmes utilisés, pas encore de validation indépendante via des publications évaluées par les pairs.</p>
       </div>
       <div class="limit-card">
         <span class="limit-icon">📏</span>
         <h4>Défi de l'échelle humaine</h4>
-        <p>Le cerveau humain compte 86 milliards de neurones contre 140 000 pour la mouche. Le prochain objectif (cerveau de souris, ~70 millions) représente déjà 560× la complexité actuelle.</p>
+        <p>Le cerveau humain compte 86 milliards de neurones contre 140 000 pour la mouche. Le prochain objectif (cerveau de souris, ~70 millions) représente 560× la complexité actuelle.</p>
       </div>
     </div>
 
-    <!-- CONCLUSION -->
     <div class="veille-section-title">// Analyse & perspectives</div>
     <div class="veille-conclusion">
       <p>
         Ce projet illustre un <strong>changement de paradigme majeur</strong> dans l'intelligence artificielle : 
         plutôt que d'essayer de coder l'intelligence à travers des algorithmes statistiques, 
         Eon Systems a choisi de <strong>copier directement l'architecture du vivant</strong>. 
-        Si cette approche venait à s'étendre au cerveau humain, elle pourrait transformer en profondeur 
-        des domaines comme la médecine (étude des maladies neurodégénératives sur modèles numériques), 
-        l'intelligence artificielle générale (AGI), et même soulever des questions éthiques fondamentales 
-        sur la conscience et la simulation. Pour un professionnel de l'informatique, 
+        Pour un professionnel de l'informatique, 
         ce type d'avancée illustre aussi la <strong>puissance croissante des infrastructures de calcul</strong> 
         nécessaires à ces simulations — un défi directement lié aux métiers des systèmes et réseaux.
       </p>
