@@ -36,7 +36,6 @@ body {
   min-height: 100vh;
 }
  
-/* Ambient background gradients */
 body::before {
   content: '';
   position: fixed; inset: 0;
@@ -48,7 +47,6 @@ body::before {
   z-index: 0;
 }
  
-/* ─── Layout ──────────────────────────────────────────────────── */
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -57,7 +55,6 @@ body::before {
   z-index: 1;
 }
  
-/* ─── Header ──────────────────────────────────────────────────── */
 .header {
   text-align: center;
   padding: 64px 0 48px;
@@ -93,7 +90,6 @@ body::before {
   letter-spacing: .08em;
 }
  
-/* ─── Tabs ────────────────────────────────────────────────────── */
 .tabs {
   display: flex;
   flex-wrap: wrap;
@@ -137,7 +133,6 @@ body::before {
 .tab-btn:hover::after,
 .tab-btn.active::after { opacity: 1; }
  
-/* ─── Content Panel ───────────────────────────────────────────── */
 .content {
   background: var(--surface);
   border: 1px solid rgba(255,255,255,.08);
@@ -156,7 +151,6 @@ body::before {
   opacity: .5;
 }
  
-/* ─── Section Animation ───────────────────────────────────────── */
 .section { display: none; }
 .section.active {
   display: block;
@@ -168,7 +162,6 @@ body::before {
   to   { opacity: 1; transform: translateY(0); }
 }
  
-/* Section headings */
 .section h2 {
   font-size: 1.6rem;
   font-weight: 700;
@@ -176,7 +169,6 @@ body::before {
   color: var(--text);
 }
  
-/* ─── Grid & Cards ────────────────────────────────────────────── */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -211,7 +203,6 @@ body::before {
 .card:hover::before { opacity: 1; }
 .card > * { position: relative; z-index: 1; }
  
-/* ─── Badges ──────────────────────────────────────────────────── */
 .badge {
   display: inline-block;
   background: rgba(0,255,255,.18);
@@ -223,12 +214,10 @@ body::before {
   margin: 2px;
 }
  
-/* Priority borders */
 .priority-high   { border-left: 3px solid #ff4444; }
 .priority-medium { border-left: 3px solid #ffaa00; }
 .priority-low    { border-left: 3px solid #44ff44; }
  
-/* ─── Skill Bar ───────────────────────────────────────────────── */
 .skill-bar {
   background: rgba(255,255,255,.1);
   height: 5px;
@@ -257,7 +246,6 @@ body::before {
   100% { transform: translateX(100%); }
 }
  
-/* ─── Timeline ────────────────────────────────────────────────── */
 .timeline {
   position: relative;
   padding-left: 28px;
@@ -296,7 +284,6 @@ body::before {
   box-shadow: 0 12px 28px rgba(0,128,255,.2);
 }
  
-/* ─── Stats ───────────────────────────────────────────────────── */
 .stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -331,7 +318,6 @@ body::before {
   margin-bottom: 8px;
 }
  
-/* ─── Welcome ─────────────────────────────────────────────────── */
 .welcome-card {
   text-align: center;
   padding: 72px 40px;
@@ -367,7 +353,6 @@ body::before {
   line-height: 1.8;
 }
  
-/* ─── Project Cards ───────────────────────────────────────────── */
 .project-card {
   cursor: pointer;
   position: relative;
@@ -395,7 +380,6 @@ body::before {
   box-shadow: 0 18px 36px rgba(255,0,255,.22);
 }
  
-/* ─── Modal ───────────────────────────────────────────────────── */
 .modal-overlay {
   position: fixed; inset: 0;
   background: rgba(0,0,0,.8);
@@ -493,7 +477,6 @@ body::before {
   line-height: 1.7;
 }
  
-/* ─── Tableau E5 ──────────────────────────────────────────────── */
 .tableau-legend {
   display: flex;
   gap: 20px;
@@ -587,7 +570,6 @@ body::before {
 .realisation-title { font-size: 12px; color: var(--text); font-weight: 600; }
 .realisation-desc  { font-size: 11px; color: var(--muted); margin-top: 2px; line-height: 1.45; font-family: var(--font-mono); }
  
-/* ─── Contact ─────────────────────────────────────────────────── */
 .contact-highlight {
   text-align: center;
   padding: 28px;
@@ -597,12 +579,10 @@ body::before {
   background: rgba(0,128,255,.06);
 }
  
-/* ─── Scrollbar ───────────────────────────────────────────────── */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: rgba(0,255,255,.3); border-radius: 3px; }
  
-/* ─── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 768px) {
   .content { padding: 22px; }
   .grid, .stats { grid-template-columns: 1fr; }
@@ -623,7 +603,6 @@ body::before {
   <main class="content" id="content" role="main"></main>
 </div>
  
-<!-- Modal -->
 <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-label="Détails du projet">
   <div class="modal" id="modal">
     <button class="modal-close" onclick="closeModal()" aria-label="Fermer">&times;</button>
@@ -632,9 +611,6 @@ body::before {
 </div>
  
 <script>
-/* ─────────────────────────────────────────────────────────────
-   DATA
-───────────────────────────────────────────────────────────── */
 const DATA = {
   tabs: [
     {id:'accueil',   icon:'🏠', name:'Accueil'},
@@ -682,24 +658,24 @@ const DATA = {
       `,
     },
     {
-      nom:'Mission Infrastructure RATP Dev Lyon',
+      nom:'Gestion de tickets & support utilisateurs – RATP Dev Lyon',
       type:'🏢 Stage',
-      techno:['Switches Cisco','VLAN','Zabbix','PowerShell','Active Directory','Easy Vista'],
-      resume:'Stage de 7 semaines : configuration switches Cisco, supervision Zabbix, automatisation PowerShell AD, support utilisateur Easy Vista.',
+      techno:['Easy Vista','Active Directory','Windows 10','Proxy','Support N1','ITSM'],
+      resume:'Intégré à l\'équipe technicien de proxy : traitement de tickets via Easy Vista (dotations matériel, réinitialisations de mots de passe Microsoft), support des agents d\'exploitation au quotidien.',
       statut:'✅ Terminé',
       desc:`
         <h4>📋 Contexte</h4>
-        <p><strong>RATP Dev Lyon</strong> — filiale transport urbain lyonnais. Service Infrastructure & Réseaux (8 collaborateurs). Durée : 7 semaines, mai–juin 2025.</p>
-        <h4>📡 Configuration réseau</h4>
-        <p>Switches Cisco Catalyst 2960X/3750 sur sites de maintenance, VLAN (admin, exploitation, vidéosurveillance, bornes), QoS, inventaire de 150+ équipements sur 12 sites.</p>
-        <h4>📊 Supervision Zabbix</h4>
-        <p>Agents sur 50+ équipements critiques, templates personnalisés, seuils d'alerte adaptés au transport, tableaux de bord temps réel, formation équipe.</p>
-        <h4>💻 Automatisation PowerShell AD</h4>
-        <p>Nettoyage comptes désactivés (+90j), audit sécurité, rapports Excel automatisés. Résultat : −80% de maintenance manuelle, meilleure sécurité, procédures standardisées.</p>
-        <h4>🎫 Support Easy Vista</h4>
-        <p>35+ tickets N1 traités, support des conducteurs, base de connaissances, astreintes weekend pour continuité de service.</p>
-        <h4>✅ Bilan</h4>
-        <p>Environnement critique 24h/24, 800+ comptes AD, confirmation de la spécialisation SISR, autonomie progressive sur les missions.</p>
+        <p><strong>RATP Dev Lyon</strong> — intégré à l'équipe technicien de proxy, en charge du support informatique des agents d'exploitation (conducteurs, agents de maintenance). Environnement critique avec des exigences de réactivité élevées.</p>
+        <h4>🎫 Gestion des tickets via Easy Vista</h4>
+        <p>Traitement des demandes de service entrantes via le logiciel ITSM <strong>Easy Vista</strong> : qualification, prise en charge et résolution des tickets de niveau 1. Respect des délais de traitement (SLA) et mise à jour des tickets tout au long de leur cycle de vie.</p>
+        <h4>📦 Dotations de matériel informatique</h4>
+        <p>Réception, préparation et remise du matériel informatique aux utilisateurs (postes de travail, périphériques, accessoires). Vérification du bon fonctionnement avant remise, signature des bons de dotation et mise à jour du suivi d'attribution dans les outils de gestion.</p>
+        <h4>🔑 Réinitialisations de mots de passe Microsoft</h4>
+        <p>Réinitialisation des comptes utilisateurs Microsoft via la console <strong>Active Directory</strong> à la demande des agents. Application stricte des procédures de sécurité (vérification d'identité, traçabilité des actions). Assistance à la reconnexion post-réinitialisation.</p>
+        <h4>🌐 Équipe technicien de proxy</h4>
+        <p>Participation aux missions de l'équipe proxy : contribution à la gestion des accès réseau et au bon fonctionnement des services pour les utilisateurs finaux. Coordination avec les autres techniciens pour les escalades de niveau 2 et le suivi des incidents complexes.</p>
+        <h4>✅ Compétences acquises</h4>
+        <p>Maîtrise d'un outil ITSM professionnel (Easy Vista), gestion complète du cycle de vie d'un ticket, communication et relation utilisateur en environnement sensible, manipulation d'Active Directory, travail en équipe support, respect des procédures et de la confidentialité.</p>
       `,
     },
     {
@@ -729,17 +705,8 @@ const DATA = {
     {titre:'Stage RATP Dev Lyon', date:'2025-06', desc:'7 semaines : réseau professionnel, switches Cisco, supervision Zabbix, scripts PowerShell AD.'},
     {titre:'Stage RATP Dev Lyon', date:'2026-01', desc:'Stage de 2e année — approfondissement des missions infrastructure, systèmes et réseaux.'},
   ],
- 
-  objectifs: [
-    {titre:'Certification CCNA Cisco', cat:'🏆 Certification', priorite:'Haute', date:'2025-12-01', desc:'Préparation intensive au CCNA pour valider les compétences réseau/infrastructure. Objectif prioritaire pour la spécialisation SISR.'},
-    {titre:'Certification AWS Cloud Practitioner', cat:'☁️ Cloud', priorite:'Moyenne', date:'2026-03-01', desc:'Fondamentaux du cloud computing AWS, ouverture vers les infrastructures cloud.'},
-    {titre:'Spécialisation Cybersécurité', cat:'🔒 Sécurité', priorite:'Moyenne', date:'2026-06-01', desc:'Pare-feu, sécurisation d\'infrastructures, audit de sécurité réseau.'},
-  ],
 };
  
-/* ─────────────────────────────────────────────────────────────
-   TABLEAU E5 DATA
-───────────────────────────────────────────────────────────── */
 const TABLEAU = {
   headers: [
     'Gérer le patrimoine informatique',
@@ -771,7 +738,7 @@ const TABLEAU = {
         {badge:'pro', label:'Stage', titre:'Déploiement supervision Zabbix',                   desc:'Agents sur 50+ équipements · Templates personnalisés · Formation équipe',         comps:[1,1,0,0,0,0]},
         {badge:'pro', label:'Stage', titre:'Automatisation PowerShell – Active Directory',      desc:'Nettoyage comptes (+90j) · Rapports Excel · −80% maintenance',                   comps:[1,1,0,1,0,0]},
         {badge:'pro', label:'Stage', titre:'Diagnostic & optimisation postes BAL',              desc:'Script PowerShell à distance · Upgrade RAM · Remplacement postes obsolètes',     comps:[1,1,0,1,1,0]},
-        {badge:'pro', label:'Stage', titre:'Traitement tickets – Easy Vista',                  desc:'35+ tickets N1 · Connectivité, config postes, mdp · Support conducteurs',         comps:[0,1,0,0,0,0]},
+        {badge:'pro', label:'Stage', titre:'Gestion tickets Easy Vista – dotations & MDP',     desc:'Demandes de dotation matériel · Réinitialisation MDP Microsoft · Équipe proxy',   comps:[1,1,0,0,0,0]},
         {badge:'pro', label:'Stage', titre:'Planification & suivi équipements',                desc:'Fichier de suivi tickets/matériel · Coordination équipe IT',                      comps:[1,0,0,1,1,0]},
         {badge:'pro', label:'Stage', titre:'Accompagnement utilisateurs & migration AD',       desc:'Migration SLTC → METIER · Profils itinérants · Résolution incidents connexion',  comps:[1,1,0,0,1,0]},
       ],
@@ -779,17 +746,11 @@ const TABLEAU = {
   ],
 };
  
-/* ─────────────────────────────────────────────────────────────
-   HELPERS
-───────────────────────────────────────────────────────────── */
 const h = (tag, cls, inner) => `<${tag}${cls ? ` class="${cls}"` : ''}>${inner}</${tag}>`;
 const badges = arr => arr.map(t => `<span class="badge">${t}</span>`).join('');
 const fmtDate = (iso, opts = {year:'numeric', month:'long'}) =>
   new Date(iso + (iso.length === 7 ? '-01' : '')).toLocaleDateString('fr-FR', opts);
  
-/* ─────────────────────────────────────────────────────────────
-   SECTION RENDERERS
-───────────────────────────────────────────────────────────── */
 const sections = {
   accueil: () => `
     <div class="welcome-card">
@@ -811,7 +772,7 @@ const sections = {
         </div>`).join('')}
     </div>
     <p><strong>Progression :</strong> BTS SIO SISR en cours — spécialisation infrastructure, systèmes et réseaux.</p>
-    <p style="margin-top:10px"><strong>Stage RATP Dev Lyon :</strong> 7 semaines — switches Cisco, VLAN, Zabbix, PowerShell, Easy Vista, diagnostic postes BAL.</p>
+    <p style="margin-top:10px"><strong>Stage RATP Dev Lyon :</strong> 7 semaines — support utilisateurs Easy Vista, gestion tickets, dotations matériel, réinitialisations MDP, équipe proxy.</p>
     <p style="margin-top:10px;color:var(--muted);font-family:var(--font-mono);font-size:.8rem">Dernière mise à jour : ${new Date().toLocaleDateString('fr-FR')}</p>`,
  
   competences: () => `
@@ -846,7 +807,6 @@ const sections = {
           <p>${p.desc}</p>
         </div>`).join('')}
     </div>`,
- 
  
   tableau: () => {
     const thCells = TABLEAU.headers.map(h => `<th>${h}</th>`).join('');
@@ -914,9 +874,6 @@ const sections = {
     </div>`,
 };
  
-/* ─────────────────────────────────────────────────────────────
-   NAVIGATION
-───────────────────────────────────────────────────────────── */
 let activeTab = 'accueil';
  
 function show(id) {
@@ -925,9 +882,6 @@ function show(id) {
   document.getElementById('content').innerHTML = `<div class="section active">${sections[id]()}</div>`;
 }
  
-/* ─────────────────────────────────────────────────────────────
-   MODAL
-───────────────────────────────────────────────────────────── */
 function openModal(idx) {
   const p = DATA.projets[idx];
   document.getElementById('modal-content').innerHTML = `
@@ -945,27 +899,17 @@ function closeModal() {
   document.body.style.overflow = '';
 }
  
-/* ─────────────────────────────────────────────────────────────
-   EVENTS
-───────────────────────────────────────────────────────────── */
 document.getElementById('modal-overlay').addEventListener('click', e => {
   if (e.target === e.currentTarget) closeModal();
 });
  
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeModal();
-});
- 
-// Keyboard support for tab buttons and project cards
-document.addEventListener('keydown', e => {
   if (e.key === 'Enter' && e.target.matches('.tab-btn')) e.target.click();
   if (e.key === 'Enter' && e.target.matches('.project-card')) e.target.click();
   if (e.key === 'Enter' && e.target.matches('.stat-card')) e.target.click();
 });
  
-/* ─────────────────────────────────────────────────────────────
-   INIT
-───────────────────────────────────────────────────────────── */
 document.getElementById('tabs').innerHTML = DATA.tabs.map(t =>
   `<button class="tab-btn${t.id === 'accueil' ? ' active' : ''}" data-tab="${t.id}" onclick="show('${t.id}')">${t.icon} ${t.name}</button>`
 ).join('');
