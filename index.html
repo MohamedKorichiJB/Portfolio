@@ -1175,24 +1175,186 @@ const sections = {
     <!-- IMAGES -->
     <div class="veille-section-title">// Illustrations du projet</div>
     <div class="veille-img-grid">
+
+      <!-- IMAGE 1 : Connectome / réseau neuronal -->
       <div class="veille-img-card">
-        <img src="https://neurosciencenews.com/files/2023/10/fruit-fly-brain-map-neuroscience.jpg" 
-             alt="Cartographie du cerveau de la drosophile" 
-             onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Drosophila_melanogaster_-_side_%28aka%29.jpg/320px-Drosophila_melanogaster_-_side_%28aka%29.jpg'">
-        <div class="img-caption">🧠 Connectome de la drosophile — cartographie complète des 140 000 neurones (projet FlyWire / Princeton)</div>
+        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:170px;display:block;background:#08101e;">
+          <defs>
+            <radialGradient id="ng1" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#00ffff" stop-opacity="0.18"/>
+              <stop offset="100%" stop-color="#0d1120" stop-opacity="0"/>
+            </radialGradient>
+            <filter id="glow1"><feGaussianBlur stdDeviation="2.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <rect width="400" height="200" fill="#08101e"/>
+          <ellipse cx="200" cy="100" rx="140" ry="80" fill="url(#ng1)"/>
+          <!-- Neurones -->
+          <g filter="url(#glow1)">
+            <!-- Nœuds principaux -->
+            <circle cx="200" cy="100" r="6" fill="#00ffff" opacity="0.9"/>
+            <circle cx="130" cy="70"  r="4" fill="#00ffff" opacity="0.8"/>
+            <circle cx="270" cy="70"  r="4" fill="#ff00ff" opacity="0.8"/>
+            <circle cx="150" cy="130" r="4" fill="#0080ff" opacity="0.8"/>
+            <circle cx="250" cy="130" r="4" fill="#00ffff" opacity="0.8"/>
+            <circle cx="100" cy="100" r="3" fill="#ff00ff" opacity="0.7"/>
+            <circle cx="300" cy="100" r="3" fill="#0080ff" opacity="0.7"/>
+            <circle cx="170" cy="60"  r="3" fill="#00ffff" opacity="0.7"/>
+            <circle cx="230" cy="60"  r="3" fill="#ff00ff" opacity="0.7"/>
+            <circle cx="120" cy="140" r="3" fill="#0080ff" opacity="0.7"/>
+            <circle cx="280" cy="140" r="3" fill="#00ffff" opacity="0.7"/>
+            <circle cx="200" cy="55"  r="3" fill="#ff00ff" opacity="0.7"/>
+            <circle cx="200" cy="145" r="3" fill="#0080ff" opacity="0.7"/>
+            <!-- Petits nœuds -->
+            <circle cx="155" cy="90"  r="2" fill="#00ffff" opacity="0.6"/>
+            <circle cx="245" cy="90"  r="2" fill="#ff00ff" opacity="0.6"/>
+            <circle cx="175" cy="115" r="2" fill="#0080ff" opacity="0.6"/>
+            <circle cx="225" cy="115" r="2" fill="#00ffff" opacity="0.6"/>
+            <circle cx="85"  cy="80"  r="2" fill="#ff00ff" opacity="0.5"/>
+            <circle cx="315" cy="80"  r="2" fill="#0080ff" opacity="0.5"/>
+            <circle cx="85"  cy="120" r="2" fill="#00ffff" opacity="0.5"/>
+            <circle cx="315" cy="120" r="2" fill="#ff00ff" opacity="0.5"/>
+          </g>
+          <!-- Connexions synaptiques -->
+          <g stroke-width="0.8" opacity="0.45">
+            <line x1="200" y1="100" x2="130" y2="70"  stroke="#00ffff"/>
+            <line x1="200" y1="100" x2="270" y2="70"  stroke="#ff00ff"/>
+            <line x1="200" y1="100" x2="150" y2="130" stroke="#0080ff"/>
+            <line x1="200" y1="100" x2="250" y2="130" stroke="#00ffff"/>
+            <line x1="200" y1="100" x2="100" y2="100" stroke="#ff00ff"/>
+            <line x1="200" y1="100" x2="300" y2="100" stroke="#0080ff"/>
+            <line x1="200" y1="100" x2="200" y2="55"  stroke="#00ffff"/>
+            <line x1="200" y1="100" x2="200" y2="145" stroke="#ff00ff"/>
+            <line x1="130" y1="70"  x2="170" y2="60"  stroke="#00ffff"/>
+            <line x1="130" y1="70"  x2="100" y2="100" stroke="#ff00ff"/>
+            <line x1="270" y1="70"  x2="230" y2="60"  stroke="#ff00ff"/>
+            <line x1="270" y1="70"  x2="300" y2="100" stroke="#0080ff"/>
+            <line x1="150" y1="130" x2="120" y2="140" stroke="#0080ff"/>
+            <line x1="250" y1="130" x2="280" y2="140" stroke="#00ffff"/>
+            <line x1="130" y1="70"  x2="155" y2="90"  stroke="#00ffff"/>
+            <line x1="270" y1="70"  x2="245" y2="90"  stroke="#ff00ff"/>
+            <line x1="150" y1="130" x2="175" y2="115" stroke="#0080ff"/>
+            <line x1="250" y1="130" x2="225" y2="115" stroke="#00ffff"/>
+            <line x1="100" y1="100" x2="85"  y2="80"  stroke="#ff00ff"/>
+            <line x1="100" y1="100" x2="85"  y2="120" stroke="#00ffff"/>
+            <line x1="300" y1="100" x2="315" y2="80"  stroke="#0080ff"/>
+            <line x1="300" y1="100" x2="315" y2="120" stroke="#ff00ff"/>
+            <line x1="170" y1="60"  x2="200" y2="55"  stroke="#00ffff"/>
+            <line x1="230" y1="60"  x2="200" y2="55"  stroke="#ff00ff"/>
+            <line x1="120" y1="140" x2="200" y2="145" stroke="#0080ff"/>
+            <line x1="280" y1="140" x2="200" y2="145" stroke="#00ffff"/>
+          </g>
+          <!-- Label -->
+          <text x="200" y="190" text-anchor="middle" fill="rgba(0,255,255,0.5)" font-size="10" font-family="monospace">Connectome — 140 000 neurones · FlyWire / Princeton</text>
+        </svg>
+        <div class="img-caption">🧠 Connectome de la drosophile — cartographie complète des 140 000 neurones (projet FlyWire / Princeton 2024)</div>
       </div>
+
+      <!-- IMAGE 2 : Synapses / signaux électriques -->
       <div class="veille-img-card">
-        <img src="https://neurosciencenews.com/files/2023/10/fly-connectome-neuroscience.jpg" 
-             alt="Réseau neuronal de la mouche"
-             onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/NeuroMechFly.png/320px-NeuroMechFly.png'">
-        <div class="img-caption">🔬 Réseau de connexions synaptiques — 50 millions de synapses modélisées bit par bit</div>
+        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:170px;display:block;background:#08101e;">
+          <defs>
+            <linearGradient id="sg1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#00ffff" stop-opacity="0"/>
+              <stop offset="50%" stop-color="#00ffff" stop-opacity="0.8"/>
+              <stop offset="100%" stop-color="#00ffff" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="sg2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#ff00ff" stop-opacity="0"/>
+              <stop offset="50%" stop-color="#ff00ff" stop-opacity="0.8"/>
+              <stop offset="100%" stop-color="#ff00ff" stop-opacity="0"/>
+            </linearGradient>
+            <filter id="glow2"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <rect width="400" height="200" fill="#08101e"/>
+          <!-- Axones -->
+          <g filter="url(#glow2)" opacity="0.7">
+            <!-- Neurone 1 -->
+            <circle cx="60" cy="50" r="10" fill="none" stroke="#00ffff" stroke-width="1.5"/>
+            <circle cx="60" cy="50" r="5"  fill="#00ffff" opacity="0.6"/>
+            <line x1="70" y1="50" x2="340" y2="50" stroke="url(#sg1)" stroke-width="2"/>
+            <!-- Potentiel d'action -->
+            <polyline points="120,50 135,50 140,20 150,80 160,50 340,50" fill="none" stroke="#00ffff" stroke-width="1.5" opacity="0.9"/>
+            <!-- Neurone 2 -->
+            <circle cx="60" cy="100" r="10" fill="none" stroke="#ff00ff" stroke-width="1.5"/>
+            <circle cx="60" cy="100" r="5"  fill="#ff00ff" opacity="0.6"/>
+            <line x1="70" y1="100" x2="340" y2="100" stroke="url(#sg2)" stroke-width="2"/>
+            <polyline points="180,100 195,100 200,70 210,130 220,100 340,100" fill="none" stroke="#ff00ff" stroke-width="1.5" opacity="0.9"/>
+            <!-- Neurone 3 -->
+            <circle cx="60" cy="150" r="10" fill="none" stroke="#0080ff" stroke-width="1.5"/>
+            <circle cx="60" cy="150" r="5"  fill="#0080ff" opacity="0.6"/>
+            <line x1="70" y1="150" x2="340" y2="150" stroke="#0080ff" stroke-width="1.5" opacity="0.4"/>
+            <polyline points="240,150 255,150 260,120 270,180 280,150 340,150" fill="none" stroke="#0080ff" stroke-width="1.5" opacity="0.9"/>
+            <!-- Synapse entre neurone 1 et 2 -->
+            <circle cx="340" cy="50"  r="6" fill="#00ffff" opacity="0.5"/>
+            <circle cx="340" cy="100" r="6" fill="#ff00ff" opacity="0.5"/>
+            <circle cx="340" cy="150" r="6" fill="#0080ff" opacity="0.5"/>
+            <line x1="340" y1="50" x2="370" y2="100" stroke="rgba(0,255,255,0.4)" stroke-width="1"/>
+            <line x1="340" y1="100" x2="370" y2="150" stroke="rgba(255,0,255,0.4)" stroke-width="1"/>
+          </g>
+          <!-- Labels axes -->
+          <text x="35" y="54"  text-anchor="middle" fill="rgba(0,255,255,0.6)" font-size="8" font-family="monospace">N1</text>
+          <text x="35" y="104" text-anchor="middle" fill="rgba(255,0,255,0.6)" font-size="8" font-family="monospace">N2</text>
+          <text x="35" y="154" text-anchor="middle" fill="rgba(0,128,255,0.6)" font-size="8" font-family="monospace">N3</text>
+          <text x="200" y="192" text-anchor="middle" fill="rgba(0,255,255,0.5)" font-size="10" font-family="monospace">Signaux électriques — modèle LIF (Leaky Integrate-and-Fire)</text>
+        </svg>
+        <div class="img-caption">⚡ Propagation des signaux électriques dans le réseau — modèle Leaky Integrate-and-Fire appliqué aux 50M synapses</div>
       </div>
+
+      <!-- IMAGE 3 : Corps virtuel NeuroMechFly -->
       <div class="veille-img-card">
-        <img src="https://nely-epfl.github.io/flygym/favicon.ico" 
-             alt="Corps virtuel NeuroMechFly"
-             onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Drosophila_melanogaster_Proboscis.jpg/320px-Drosophila_melanogaster_Proboscis.jpg'">
-        <div class="img-caption">🤖 Corps virtuel NeuroMechFly v2 (EPFL) — simulé via le moteur physique MuJoCo</div>
+        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:170px;display:block;background:#08101e;">
+          <defs>
+            <radialGradient id="bg3" cx="50%" cy="45%" r="55%">
+              <stop offset="0%" stop-color="#001a20"/>
+              <stop offset="100%" stop-color="#08101e"/>
+            </radialGradient>
+            <filter id="glow3"><feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <rect width="400" height="200" fill="url(#bg3)"/>
+          <!-- Sol -->
+          <line x1="60" y1="158" x2="340" y2="158" stroke="rgba(0,255,255,0.15)" stroke-width="1"/>
+          <!-- Corps mouche stylisé (vue de côté) -->
+          <g filter="url(#glow3)" transform="translate(200,95)">
+            <!-- Abdomen -->
+            <ellipse cx="30" cy="10" rx="35" ry="18" fill="none" stroke="#00ffff" stroke-width="1.5" opacity="0.8"/>
+            <!-- Thorax -->
+            <ellipse cx="-10" cy="5" rx="22" ry="16" fill="none" stroke="#00ffff" stroke-width="1.5" opacity="0.8"/>
+            <!-- Tête -->
+            <circle cx="-38" cy="2" r="13" fill="none" stroke="#ff00ff" stroke-width="1.5" opacity="0.8"/>
+            <!-- Yeux -->
+            <circle cx="-42" cy="-2" r="4" fill="rgba(255,0,255,0.3)" stroke="#ff00ff" stroke-width="1"/>
+            <!-- Antennes -->
+            <line x1="-45" y1="-10" x2="-55" y2="-25" stroke="#ff00ff" stroke-width="1" opacity="0.8"/>
+            <line x1="-41" y1="-12" x2="-48" y2="-28" stroke="#ff00ff" stroke-width="1" opacity="0.8"/>
+            <circle cx="-55" cy="-25" r="2" fill="#ff00ff" opacity="0.6"/>
+            <circle cx="-48" cy="-28" r="2" fill="#ff00ff" opacity="0.6"/>
+            <!-- Ailes -->
+            <ellipse cx="-5" cy="-20" rx="38" ry="14" fill="rgba(0,255,255,0.06)" stroke="#00ffff" stroke-width="1" opacity="0.6" transform="rotate(-15,-5,-20)"/>
+            <ellipse cx="5" cy="-22" rx="30" ry="10" fill="rgba(0,128,255,0.06)" stroke="#0080ff" stroke-width="1" opacity="0.5" transform="rotate(-10,5,-22)"/>
+            <!-- Pattes (6) -->
+            <!-- Patte avant gauche -->
+            <polyline points="-20,18 -30,35 -25,52" fill="none" stroke="#0080ff" stroke-width="1.5" opacity="0.8"/>
+            <!-- Patte milieu gauche -->
+            <polyline points="-5,18 -8,38 -2,55" fill="none" stroke="#0080ff" stroke-width="1.5" opacity="0.8"/>
+            <!-- Patte arrière gauche -->
+            <polyline points="15,18 18,37 25,53" fill="none" stroke="#0080ff" stroke-width="1.5" opacity="0.8"/>
+            <!-- Points articulations -->
+            <circle cx="-30" cy="35" r="2" fill="#0080ff" opacity="0.7"/>
+            <circle cx="-8"  cy="38" r="2" fill="#0080ff" opacity="0.7"/>
+            <circle cx="18"  cy="37" r="2" fill="#0080ff" opacity="0.7"/>
+            <!-- Cerveau (dans la tête) -->
+            <ellipse cx="-36" cy="2" rx="7" ry="6" fill="rgba(0,255,255,0.15)" stroke="#00ffff" stroke-width="0.8" stroke-dasharray="2,1"/>
+            <!-- Signal cerveau → corps -->
+            <line x1="-29" y1="2" x2="-18" y2="4" stroke="rgba(0,255,255,0.5)" stroke-width="1" stroke-dasharray="3,2"/>
+          </g>
+          <!-- Labels -->
+          <text x="130" y="185" text-anchor="middle" fill="rgba(255,0,255,0.6)" font-size="9" font-family="monospace">Cerveau simulé</text>
+          <text x="265" y="185" text-anchor="middle" fill="rgba(0,128,255,0.6)" font-size="9" font-family="monospace">Corps virtuel MuJoCo</text>
+          <text x="200" y="15" text-anchor="middle" fill="rgba(0,255,255,0.5)" font-size="10" font-family="monospace">NeuroMechFly v2 — EPFL · 91% comportements reproduits</text>
+        </svg>
+        <div class="img-caption">🤖 Corps virtuel NeuroMechFly v2 (EPFL) — cerveau numérique couplé à un corps simulé via le moteur physique MuJoCo</div>
       </div>
+
     </div>
 
     <!-- COMMENT ÇA MARCHE -->
